@@ -1,8 +1,16 @@
+import React from "react";
+import Header from "../components/Header";
+import Input from "../components/Input";
+
+
 function Home() {
   return (
     <div>
-      <h1>Welcome to MarketHub</h1>
-      <p>Here you can find all your favorite products at the best prices!</p>
+<Header></Header>
+
+
+
+      
     </div>
   );
 }
