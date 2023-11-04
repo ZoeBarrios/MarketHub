@@ -17,6 +17,15 @@ export const getPublication = async (id) => {
   return checkResponse(response);
 };
 
+export const getPublicationsByUserId = async (id) => {
+  const response = await fetch(`${baseUrl}/publications/user/${id}`, {
+    headers: {
+      Authorization: authorizationHeader,
+    },
+  });
+  return checkResponse(response);
+};
+
 export const createPublication = async (formData) => {
   const response = await fetch(`${baseUrl}/publications`, {
     method: "POST",

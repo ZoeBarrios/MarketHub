@@ -3,12 +3,16 @@ import { AUTH } from "../utils/constants";
 import { useReducer } from "react";
 
 const tokenStorage = localStorage.getItem("token");
-const userStorage = JSON.parse(localStorage.getItem("user"));
+const userStorageUser = localStorage.getItem("user");
+const userStorage =
+  userStorageUser !== "undefined" && userStorageUser !== null
+    ? JSON.parse(localStorage.getItem("user"))
+    : null;
 
 const initialState = {
   isAuthenticated: tokenStorage && userStorage ? true : false,
   token: tokenStorage ?? null,
-  user: userStorage ?? null,
+  user: userStorage,
 };
 
 function authReducer(state, action) {

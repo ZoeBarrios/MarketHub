@@ -1,9 +1,14 @@
 import { useContext } from "react";
 import AuthContext from "../context/authContext";
+import { QueryClient } from "react-query";
+import { getPublicationsByUserId } from "../services/publication";
 
-function Home() {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+function Profile() {
+  /*const { isLoading, error, data } = QueryClient(
+    "publicationsUser",
+    getPublicationsByUserId(user.id)
+  );*/
+
   return (
     <div>
       <h1>Nombre Persona</h1>
@@ -22,4 +27,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Profile;
