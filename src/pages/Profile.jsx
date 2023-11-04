@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import AuthContext from "../context/authContext";
+
 function Home() {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div>
       <h1>Nombre Persona</h1>
