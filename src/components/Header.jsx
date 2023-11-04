@@ -17,9 +17,9 @@ export default function Header() {
             <Input class="input1"></Input>
 
             <Link href="/profile">Profile</Link>
-            <Link href="/auth">Login</Link>
+            <Link className="btn_naranja" href="/auth"><i class="fa-solid fa-user"></i> Login</Link>
             <a href="#">
-              <i className="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping letra_verde"></i>
             </a>
           </nav>
         </div>

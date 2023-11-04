@@ -23,8 +23,17 @@ body{
 }
 
 header{
-  background-color: #d0f5df6b;
+ /* background-color: #d0f5df6b;*/
 }
+
+.btn_naranja{
+  background-color: orangered;
+  color: white!important;
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 5px 20px;
+}
+
 
 .cont_header nav{
  /* background-color: red;*/
@@ -52,6 +61,47 @@ input{
   color: black;
 }
 
+.fondo1 {
+background-image: url(https://klbtheme.com/blonwe/wp-content/uploads/2023/09/electronics1.jpg);
+
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+padding: 10px;
+height: 100%;
+padding-top: 100px;
+padding-bottom: 100px;
+}
+
+.letra_verde{
+  color: green;
+  color: darkblue;
+  color: orangered;
+}
+
+
+.cont_fondo1{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 70%;
+  text-align:start;
+  font-size: 30px;
+}
+
+.cont_fondo1 p{
+  font-size: 20px;
+  color: grey;
+}
+.cont_fondo1 h4{
+  line-height: 1px;
+}
+
+.cont_fondo1 h1{
+  line-height: 80px;
+}
+
+
+
 
 
 
@@ -76,6 +126,12 @@ input{
 
   .logo img{
 width: 70px;
+  }
+
+
+
+  .fondo1{
+    background-position: top;
   }
 
   
