@@ -2,8 +2,8 @@ import { checkResponse } from "../utils/responses";
 
 const { VITE_API_URL: baseUrl } = import.meta.env;
 
-export const getPurchases = async () => {
-  const response = await fetch(`${baseUrl}/purchases`);
+export const getPurchasesBySeller = async (id) => {
+  const response = await fetch(`${baseUrl}/purchases/seller/${id}`);
   return checkResponse(response);
 };
 
