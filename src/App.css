@@ -24,7 +24,10 @@ body{
 
 header{
  /* background-color: #d0f5df6b;*/
+ background-color: #efefef9c;
 }
+
+
 
 .btn_naranja{
   background-color: orangered;
@@ -42,8 +45,12 @@ header{
   gap: 60px;
 }
 
+
+
 .logo img{
-width: 100px;
+width: 150px;
+border-radius: 1em;
+height: 100px;
 }
 
 
@@ -101,6 +108,117 @@ padding-bottom: 100px;
 }
 
 
+.cont_productos{
+  /*background-color: brown;*/
+  margin: auto;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.cont_imagen{
+  text-align: center;
+}
+
+.precio{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card{
+ 
+  border-radius: 15px;
+  padding:0px  10px;
+ 
+    background-color: #8080803d;
+    background-color: #bc787824;
+    /* border-style: solid; */
+    border-radius: 15px;
+    padding: 3px 10px;
+}
+
+.cont_imagen{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.precio a{
+  color: white;
+  text-decoration: none;
+  background-color: orangered;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 4px 4px;
+}
+
+
+
+.card .cont_imagen img{
+width: 80%;
+}
+
+.titulo_fondo2{
+  /*background-color: brown;*/
+  margin: auto;
+  width: 80%;
+}
+
+.car_card{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1184px){
+
+  .car_card{
+    display: initial;
+  }
+
+
+
+  .precio {
+    display: flex;
+    align-items: center;
+    display: grid;
+    /* justify-content: space-between; */
+    gap: 1px;
+}
+
+.cont_productos{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 90%;
+}
+
+}
+
+
+
+
+@media (max-width: 900px){
+
+.cont_productos{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+}
+
+
+
+
+
 
 
 
@@ -137,10 +255,19 @@ width: 70px;
   
  
 
+.cont_productos{
+grid-template-columns: 1fr 1fr;
+width: 90%;
+}
 
-
-
-
+.precio{
+  justify-content: space-between;
 }
 
 
+.precio a{
+  text-align: center;
+}
+
+
+}
