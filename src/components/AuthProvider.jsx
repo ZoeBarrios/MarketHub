@@ -5,7 +5,7 @@ import { useReducer } from "react";
 const tokenStorage = localStorage.getItem("token");
 const userStorageUser = localStorage.getItem("user");
 const userStorage =
-  userStorageUser !== "undefined" && userStorageUser !== null
+  userStorageUser !== "undefined" && userStorageUser != null
     ? JSON.parse(localStorage.getItem("user"))
     : null;
 
