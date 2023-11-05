@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Input from "../components/Input";
 import Categorias from "../components/Categorias";
 import Productos from "../components/Productos";
+import Footer from "../components/Footer";
 
 
 function Home() {
@@ -62,6 +63,13 @@ function Home() {
 
 <Productos></Productos>
 
+
+
+
+
+
+
+<Footer></Footer>
     </div>
   );
 }

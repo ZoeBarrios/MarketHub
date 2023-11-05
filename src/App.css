@@ -253,6 +253,34 @@ padding-left: 30px;
   gap: 20px;
 }
 
+footer{
+  margin-top: 100px;
+}
+
+
+.cont_footer{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.metodos_pago{
+  display: flex;
+  gap: 20px;
+}
+.metodo{
+  text-align: center;
+}
+
+.metodo img{
+  width: 100%;
+}
+
+
 
 
 
@@ -517,6 +545,10 @@ width: 90%;
   text-align: center;
 }
 
+.cont_footer{
+  flex-direction: column;
+  width: 100%;
+}
 
 }
 
