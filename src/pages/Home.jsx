@@ -12,14 +12,11 @@ import { useQuery } from "react-query";
 
 
 function Home() {
-  const {
+ const {
     isLoading: loadingPublication,
     data: publications,
     error: publicationError,
-  } = useQuery("publications", () =>
-    getPublications(1,20)
-  
-  );
+  } = useQuery("publications", () => getPublications(1, 20));
 
   console.log(publications)
 
@@ -79,17 +76,6 @@ function Home() {
      
 
 <Categorias></Categorias>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div className="fondo2">
