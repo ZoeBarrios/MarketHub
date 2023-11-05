@@ -10,6 +10,7 @@ import { useQuery } from "react-query";
 
 
 
+
 function Home() {
   const {
     isLoading: loadingPublication,
@@ -21,6 +22,25 @@ function Home() {
   );
 
   console.log(publications)
+
+
+  let renderizado = publications.map((e) => {
+    return (
+      <div className="card" key={e.id}>
+        <div className="cont_imagen">
+          <img src={e.imageUrl} alt="" />
+        </div>
+        <div className="des">
+          <h3>{e.name}</h3>
+          <div className="precio">
+            <h3>${e.price}.00</h3>
+            <a href=""><i className="fa-solid fa-cart-shopping car_card"></i> Add to Card</a>
+          </div>
+        </div>
+      </div>)
+  })
+
+
  
   return (
     <div>
@@ -72,12 +92,16 @@ function Home() {
 
 
 
-
-
-<Productos></Productos>
-
-
-
+<div className="fondo2">
+        <div className="titulo_fondo2">
+          <h1>PRODUCTS</h1>
+        </div>
+        <div className="cont_productos">
+          {
+            renderizado
+          }
+        </div>
+      </div>
 
 
 
