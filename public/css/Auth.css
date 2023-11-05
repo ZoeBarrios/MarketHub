@@ -1,0 +1,62 @@
+.auth {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form-container,
+.register-form,
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: orangered;
+}
+
+.login-form,
+.register-form {
+  border: 3px solid orangered;
+}
+
+.auth-form-container {
+  padding: 5rem;
+  border-radius: 10px;
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+  color: orangered;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  border: 3px solid orangered;
+}
+
+button {
+  border: 3px solid orangered;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: orangered;
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  color: orangered;
+  text-decoration: underline;
+}
