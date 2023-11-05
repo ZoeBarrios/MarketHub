@@ -1,87 +1,27 @@
 import React from "react";
 import Header from "../components/Header";
 import Input from "../components/Input";
+import Categorias from "../components/Categorias";
+import Productos from "../components/Productos";
+import Footer from "../components/Footer";
 import { getPublications } from "../services/publication";
+import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
 function Home() {
-  let Datos_cards = [
-    {
-      id: 1,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-10-300x300.png",
-    },
-    {
-      id: 2,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-23-300x300.png",
-    },
-    {
-      id: 3,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-18-300x300.png",
-    },
-    {
-      id: 4,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-11-300x300.png",
-    },
-    {
-      id: 5,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-9-300x300.png",
-    },
-    {
-      id: 6,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-10-300x300.png",
-    },
-    {
-      id: 7,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-23-300x300.png",
-    },
-    {
-      id: 8,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-18-300x300.png",
-    },
-    {
-      id: 9,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-11-300x300.png",
-    },
-    {
-      id: 10,
-      name: "Nombre del producto",
-      price: 123.0,
-      iMageUrl:
-        "https://klbtheme.com/blonwe/furniture/wp-content/uploads/sites/6/2023/07/1-9-300x300.png",
-    },
-  ];
+  const {
+    isLoading: loadingPublication,
+    data: publications,
+    error: publicationError,
+  } = useQuery("publications", () => getPublications(1, 20));
 
-  let renderizado = Datos_cards.map((e) => {
+  console.log(publications);
+
+  let renderizado = publications.map((e) => {
     return (
       <div className="card" key={e.id}>
         <div className="cont_imagen">
-          <img src={e.iMageUrl} alt="" />
+          <img src={e.imageUrl} alt="" />
         </div>
         <div className="des">
           <h3>{e.name}</h3>
@@ -95,9 +35,11 @@ function Home() {
       </div>
     );
   });
+
   return (
     <div>
       <Header></Header>
+
       <div className="fondo1">
         <div className="cont_fondo1">
           <h4>
@@ -113,12 +55,21 @@ function Home() {
           </p>
         </div>
       </div>
+
+      <div className="titulo_cate">
+        <h1>Categorys</h1>
+      </div>
+
+      <Categorias></Categorias>
+
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
         </div>
         <div className="cont_productos">{renderizado}</div>
       </div>
+
+      <Footer></Footer>
     </div>
   );
 }
