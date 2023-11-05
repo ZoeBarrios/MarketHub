@@ -24,7 +24,7 @@ nav.classList.toggle("eliminar")
           <div className="logo">
             <img src={Logo} alt="" />
           </div>
-          <nav className="eliminar" >
+          <nav  >
             <Input class="input1"></Input>
             <Link href="/profile">Profile</Link>
             <Link href="/productPage">{/*TEMPORAL*/}Product Page</Link>
