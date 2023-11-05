@@ -11,11 +11,14 @@ export default function List({ isLoading, data, error, listType }) {
         <Loader />
       ) : listType === LIST.PURCHASES ? (
         data.map((purchase) => (
-          <CardPurchase key={purchase.id} purchase={purchase} />
+          <CardPurchase key={purchase.purchaseId} purchase={purchase} />
         ))
       ) : (
         data.map((publication) => (
-          <CardPublication key={publication.id} publication={publication} />
+          <CardPublication
+            key={publication.publicationId}
+            publication={publication}
+          />
         ))
       )}
     </ul>

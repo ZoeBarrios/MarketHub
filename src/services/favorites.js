@@ -21,12 +21,15 @@ export const createFavorite = async (data) => {
   });
 };
 
-export const deleteFavorite = async (userId, commentId) => {
-  const response = await fetch(`${baseUrl}/favorites/${userId}/${commentId}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
+export const deleteFavorite = async (userId, publicationId) => {
+  const response = await fetch(
+    `${baseUrl}/favorites/${userId}/${publicationId}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
   return checkResponse(response);
 };

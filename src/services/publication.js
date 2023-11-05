@@ -5,9 +5,7 @@ const authorizationHeader = `Bearer ${localStorage.getItem("token")}`;
 
 export const getPublications = async (page, pageSize) => {
   const response = await fetch(
-    `${baseUrl}/publications${page ? `?page=${page}` : ""}${
-      pageSize ? `&pageSize=${pageSize}` : ""
-    }`
+    `${baseUrl}/publications?page=${page}&pageSize=${pageSize}`
   );
   return checkResponse(response);
 };
