@@ -4,12 +4,13 @@ import Routes from "../components/Routes";
 import Input from "./Input";
 import Logo from "../imgs/logo.jpeg";
 
+
 export default function Header() {
 
 let menutras = () => {
   let nav = document.querySelector(".cont_header").querySelector("nav");
 
-nav.classList.toggle("eliminar")
+nav.classList.toggle("mostrar")
 
 
 }
@@ -22,7 +23,8 @@ nav.classList.toggle("eliminar")
       <header>
         <div className="cont_header">
           <div className="logo">
-            <img src={Logo} alt="" />
+            <img  src={Logo} alt="" />
+
           </div>
           <nav  >
             <Input class="input1"></Input>
