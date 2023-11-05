@@ -12,12 +12,11 @@ export default function Header() {
           <div className="logo">
             <img src={Logo} alt="" />
           </div>
-
           <nav>
             <Input class="input1"></Input>
-
             <Link href="/profile">Profile</Link>
-            <Link className="btn_naranja" href="/auth"><i class="fa-solid fa-user"></i> Login</Link>
+            <Link href="/productPage">{/*TEMPORAL*/}Product Page</Link>
+            <Link className="btn_naranja" href="/auth"><i className="fa-solid fa-user"></i>Login</Link>
             <a href="#">
               <i className="fa-solid fa-cart-shopping letra_verde"></i>
             </a>
