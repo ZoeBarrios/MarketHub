@@ -4,10 +4,23 @@ import Input from "../components/Input";
 import Categorias from "../components/Categorias";
 import Productos from "../components/Productos";
 import Footer from "../components/Footer";
+import { getPublications } from "../services/publication";
+import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+
 
 
 function Home() {
+  const {
+    isLoading: loadingPublication,
+    data: publications,
+    error: publicationError,
+  } = useQuery("publications", () =>
+    getPublications(1,20)
+  
+  );
 
+  console.log(publications)
  
   return (
     <div>
