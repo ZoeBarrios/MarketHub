@@ -4,37 +4,32 @@ import Input from "../components/Input";
 import Categorias from "../components/Categorias";
 import Productos from "../components/Productos";
 import Footer from "../components/Footer";
-import { getPublications } from "../services/publication";
+import {
+  getPublications,
+  getPublicationsByCategory,
+} from "../services/publication";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import Card from "../components/Card";
+import { getCategories } from "../services/category";
 
 function Home() {
+  const [publicationsToShow, setPublicationsToShow] = useState([]);
   const {
     isLoading: loadingPublication,
     data: publications,
     error: publicationError,
-  } = useQuery("publications", () => getPublications(1, 20));
-
-  console.log(publications);
-
-  let renderizado = publications.map((e) => {
-    return (
-      <div className="card" key={e.id}>
-        <div className="cont_imagen">
-          <img src={e.imageUrl} alt="" />
-        </div>
-        <div className="des">
-          <h3>{e.name}</h3>
-          <div className="precio">
-            <h3>${e.price}.00</h3>
-            <a href="">
-              <i className="fa-solid fa-cart-shopping car_card"></i> Add to Card
-            </a>
-          </div>
-        </div>
-      </div>
-    );
+  } = useQuery("publications", () => getPublications(1, 20), {
+    onSuccess: (data) => {
+      setPublicationsToShow(data);
+    },
   });
+
+  const handleCategoryChance = (id, page = 1, pageSize = 20) => {
+    getPublicationsByCategory(id, page, pageSize).then((data) => {
+      setPublicationsToShow(data);
+    });
+  };
 
   return (
     <div>
@@ -60,13 +55,24 @@ function Home() {
         <h1>Categorys</h1>
       </div>
 
-      <Categorias></Categorias>
+      <Categorias handleCategoryChance={handleCategoryChance}></Categorias>
 
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
         </div>
-        <div className="cont_productos">{renderizado}</div>
+        <div className="cont_productos">
+          {loadingPublication ? (
+            <h1>Loading...</h1>
+          ) : (
+            publicationsToShow.map((publication) => (
+              <Card
+                key={publication.publicationId}
+                publication={publication}
+              ></Card>
+            ))
+          )}
+        </div>
       </div>
 
       <Footer></Footer>
