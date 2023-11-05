@@ -5,6 +5,18 @@ import Input from "./Input";
 import Logo from "../imgs/logo.jpeg";
 
 export default function Header() {
+
+let menutras = () => {
+  let nav = document.querySelector(".cont_header").querySelector("nav");
+
+nav.classList.toggle("eliminar")
+
+
+}
+
+
+
+
   return (
     <div>
       <header>
@@ -12,7 +24,7 @@ export default function Header() {
           <div className="logo">
             <img src={Logo} alt="" />
           </div>
-          <nav>
+          <nav className="eliminar" >
             <Input class="input1"></Input>
             <Link href="/profile">Profile</Link>
             <Link href="/productPage">{/*TEMPORAL*/}Product Page</Link>
@@ -21,6 +33,8 @@ export default function Header() {
               <i className="fa-solid fa-cart-shopping letra_verde"></i>
             </a>
           </nav>
+<a onClick={menutras}   className="menu_ham" ><i class="fa-solid fa-bars"></i></a>
+
         </div>
       </header>
     </div>
