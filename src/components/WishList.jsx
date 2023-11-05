@@ -20,9 +20,8 @@ export default function WishList({ id }) {
     mutate(publicationId);
   };
 
-  console.log(favorites);
   return (
-    <>
+    <div>
       {isOpen ? (
         <Modal>
           <div className="modal-content">
@@ -45,7 +44,9 @@ export default function WishList({ id }) {
           </div>
         </Modal>
       ) : null}
-      <button onClick={openModal}>Wish List</button>
-    </>
+      <button onClick={openModal} className="wish-list-button">
+        Wish List
+      </button>
+    </div>
   );
 }

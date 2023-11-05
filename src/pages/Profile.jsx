@@ -2,29 +2,19 @@ import { useContext, useState } from "react";
 import AuthContext from "../context/authContext";
 import "/public/css/profile.css";
 import ListsProfile from "../components/ListsProfile";
-import FormNewPublication from "../components/FormNewPublication";
-import WishList from "../components/WishList";
+
+import HeaderProfile from "../components/HeaderProfile";
+import CreatePublication from "../components/CreatePublication";
 
 function Profile() {
   const { state } = useContext(AuthContext);
   const { id, email, name, userName } = state.user;
-  const [showForm, setShowForm] = useState(false);
 
-  //TODO: WISH LIST
-  const handleClick = () => {
-    setShowForm(!showForm);
-  };
   return (
     <div className="profile-page">
-      <WishList id={id} />
-      <h1>{userName}</h1>
-      <p>Username: {name}</p>
-      <p>Email:{email}</p>
+      <HeaderProfile userName={userName} email={email} id={id} />
       <ListsProfile id={id} />
-      {showForm ? <FormNewPublication UserId={id} /> : null}
-      <button onClick={handleClick}>
-        {showForm ? "cancel" : "Create new publication"}
-      </button>
+      <CreatePublication id={id} />
     </div>
   );
 }

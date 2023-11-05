@@ -17,6 +17,7 @@ export default function ListsProfile({ id }) {
     ["purchaseUser", id],
     () => getPurchasesBySeller(Number(id))
   );
+
   return (
     <section className="list-info-section">
       <div className="list-publications">

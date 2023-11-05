@@ -31,5 +31,9 @@ export const deleteFavorite = async (userId, publicationId) => {
       },
     }
   );
-  return checkResponse(response);
+  if (response.status === 200) {
+    return response.status;
+  } else {
+    return response.json();
+  }
 };
