@@ -105,6 +105,7 @@ padding-bottom: 100px;
 
 .cont_fondo1 h1{
   line-height: 80px;
+  font-size: 50px;
 }
 
 
@@ -161,13 +162,101 @@ width: 80%;
 
 .titulo_fondo2{
   /*background-color: brown;*/
-  margin: auto;
-  width: 80%;
+  margin:40px auto;
+  width: 85%;
 }
 
 .car_card{
   display: none;
 }
+
+
+
+.fondo_categorias{
+ /* background-color: orangered;*/
+}
+
+.cont_categorias{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont_categorias a{
+  text-decoration: none;
+  color: black;
+  
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 5px;
+}
+
+.titulo_cate{
+ /* background-color: red;*/
+  margin:10px auto;
+  width: 90%;
+  padding: 10px 0;
+}
+
+
+.fondo_categorias{
+ background-color: #bc787824;
+ padding: 10px 0;
+margin-bottom: 100px;
+}
+
+
+.cont_categorias a{
+  transition: all 0.30s;
+}
+
+.cont_categorias a:hover{
+  transition: all 0.30s;
+color: orangered;
+}
+
+.cont_buscador{
+  position: relative;
+}
+
+
+.i_buscador{
+  position: absolute;
+ top: 8px;
+ left: 12px;
+color: rgb(109, 109, 109);
+}
+
+.cont_buscador input {
+  border-color: red;
+padding-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -202,7 +291,65 @@ width: 80%;
   width: 90%;
 }
 
+
+.cont_header{
+  width: 90%;
 }
+
+.cont_header nav{
+  gap: 20px;
+}
+
+.cont_buscador input{
+  width: 80%;
+  }
+
+
+
+.cont_header nav a{
+  font-size: 15px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -213,7 +360,62 @@ width: 80%;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.cont_header nav{
+  gap: 20px;
+  position: absolute;
+background-color:white;
+  top: 100px;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  display: flex;
+justify-content: center;
+text-align: center;
+padding: 10px 0;
+  flex-direction: column;
 }
+
+.i_buscador{
+  left: 34px;
+}
+
+
+.cont_header nav a{
+  font-size: 20px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -230,16 +432,19 @@ width: 80%;
 
 
   .cont_buscador{
-    display: none;
+    display: initial;
   }
 
   .cont_header{
     width: 80%;
   }
 
-.cont_header nav{
-  gap: 20px;
-}
+  .i_buscador{
+    top: 2px;
+    left: 10px;
+  }
+
+ 
 
 
   .logo img{
@@ -271,3 +476,69 @@ width: 90%;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

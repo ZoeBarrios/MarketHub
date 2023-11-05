@@ -37,6 +37,20 @@ function Home() {
   return (
     <div>
       <Header></Header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="fondo1">
         <div className="cont_fondo1">
           <h4>In <span className="letra_verde" >MarketHub</span></h4>
@@ -45,6 +59,48 @@ function Home() {
             products. Dont miss these opportunities...</p>
         </div>
       </div>
+
+
+
+
+
+<div className="titulo_cate">
+  <h1>Categorys</h1>
+</div>
+
+      <div className="fondo_categorias">
+
+
+
+<div className="cont_categorias">
+<a href="">Belleza y Cuidado Personas</a>
+<a href="">Coleccionables</a>
+<a href="">Deportes y Fitness</a>
+<a href="">Electrodomesticos</a>
+<a href="">Electrica</a>
+<a href="">Hogar y Jardin</a>
+<a href="">Juguetes y Niños</a>
+<a href="">Libros, Musica y Peliculas</a>
+<a href="">Moda</a>
+<a href="">Belleza y Cuidado Personal</a>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
