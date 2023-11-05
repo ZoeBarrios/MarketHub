@@ -21,7 +21,7 @@ function Home() {
   console.log(publications)
 
 
-  let renderizado = publications.map((e) => {
+ { /*let renderizado = publications.map((e) => {
     return (
       <div className="card" key={e.id}>
         <div className="cont_imagen">
@@ -36,7 +36,7 @@ function Home() {
         </div>
       </div>)
   })
-
+*/}
 
  
   return (
@@ -83,8 +83,8 @@ function Home() {
           <h1>PRODUCTS</h1>
         </div>
         <div className="cont_productos">
-          {
-            renderizado
+          {/*
+            renderizado*/
           }
         </div>
       </div>
