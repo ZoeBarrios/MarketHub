@@ -18,7 +18,6 @@ export default function FormNewPublication({ UserId }) {
     UserId: UserId,
     Stock: "",
     Image: null,
-    Category: "",
   });
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,6 +27,10 @@ export default function FormNewPublication({ UserId }) {
     for (const key in formData) {
       formDataToSend.append(key, formData[key]);
     }
+
+    formDataToSend.append("CategoryId", selectOption.current.value);
+
+    mutation.mutate(formDataToSend);
   };
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;
@@ -37,9 +40,6 @@ export default function FormNewPublication({ UserId }) {
       ...formData,
       [name]: updatedValue,
     });
-    formData.append("Category", selectOption.current.value);
-
-    mutation.mutate(formData);
   };
   return (
     <form className="form-new-publication" onSubmit={handleSubmit}>

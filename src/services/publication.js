@@ -55,8 +55,10 @@ export const deletePublication = async (id) => {
   return checkResponse(response);
 };
 
-export const getPublicationsByCategory = async (category) => {
-  const response = await fetch(`${baseUrl}/publications/category/${category}`);
+export const getPublicationsByCategory = async (category, page, pageSize) => {
+  const response = await fetch(
+    `${baseUrl}/publications/category/${category}?page=${page}&pageSize=${pageSize}`
+  );
   return checkResponse(response);
 };
 
