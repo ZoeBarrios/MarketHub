@@ -54,3 +54,13 @@ export const deleteUser = async (userId, IdToDelete) => {
   });
   return checkResponse(response);
 };
+
+export const isEmailOrUsername = (emailOrUsername) => {
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+  if (emailRegex.test(emailOrUsername)) {
+    return "email";
+  } else {
+    return "userName";
+  }
+};
