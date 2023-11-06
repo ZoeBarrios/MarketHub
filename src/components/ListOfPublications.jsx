@@ -31,11 +31,14 @@ export default function ListOfPublications() {
     dispatch({ type: PUBLICATION_ACTIONS.PREV_PAGE });
   };
 
+  const canGoBack = page > 1;
+  const canGoForward = publicationsToShow.length >= pageSize;
+
   return (
     <>
       <div className="cont_productos">
-        {publicationsToShow.length == 0 ? (
-          <h1>Loading...</h1>
+        {publicationsToShow.length === 0 ? (
+          <h1>There are no publications to show</h1>
         ) : (
           publicationsToShow.map((publication) => (
             <Card key={publication.publicationId} publication={publication} />
@@ -44,12 +47,14 @@ export default function ListOfPublications() {
       </div>
       <div className="buttons-container">
         <button
-          className="fa-solid fa-chevron-left"
-          onClick={handlePrevPage}
+          className={`fa-solid fa-chevron-left ${canGoBack ? "" : "disabled"}`}
+          onClick={canGoBack ? handlePrevPage : null}
         ></button>
         <button
-          className="fa-solid fa-chevron-right"
-          onClick={handleNextPage}
+          className={`fa-solid fa-chevron-right ${
+            canGoForward ? "" : "disabled"
+          }`}
+          onClick={canGoForward ? handleNextPage : null}
         ></button>
       </div>
     </>

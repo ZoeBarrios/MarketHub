@@ -36,7 +36,7 @@ export const Login = (props) => {
     login({ ...loginData, password })
       .then((user) => {
         handleLogin(user);
-        setLocation("/profile");
+        setLocation("/");
       })
       .catch((error) => {
         alert(error[0]);

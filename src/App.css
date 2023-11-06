@@ -300,6 +300,11 @@ footer {
   cursor: pointer;
 }
 
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @media (max-width: 1184px) {
   .car_card {
     display: initial;
