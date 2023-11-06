@@ -9,26 +9,9 @@ import { useQuery } from "react-query";
 import Card from "../components/Card";
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
+import ListOfPublications from "../components/ListOfPublications";
 
 function Home() {
-  const { publicationsToShow, changePublicationsToShow } =
-    useContext(PublicationContext);
-  const {
-    isLoading: loadingPublication,
-    data: publications,
-    error: publicationError,
-  } = useQuery("publications", () => getPublications(1, 20), {
-    onSuccess: (data) => {
-      changePublicationsToShow(data);
-    },
-  });
-
-  const handleCategoryChance = (id, page = 1, pageSize = 20) => {
-    getPublicationsByCategory(id, page, pageSize).then((data) => {
-      changePublicationsToShow(data);
-    });
-  };
-
   return (
     <div>
       <Header></Header>
@@ -53,24 +36,13 @@ function Home() {
         <h1>Categorys</h1>
       </div>
 
-      <Categorias handleCategoryChance={handleCategoryChance}></Categorias>
+      <Categorias></Categorias>
 
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
         </div>
-        <div className="cont_productos">
-          {loadingPublication ? (
-            <h1>Loading...</h1>
-          ) : (
-            publicationsToShow.map((publication) => (
-              <Card
-                key={publication.publicationId}
-                publication={publication}
-              ></Card>
-            ))
-          )}
-        </div>
+        <ListOfPublications />
       </div>
 
       <Footer></Footer>
