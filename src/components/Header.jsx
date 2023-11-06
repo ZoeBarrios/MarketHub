@@ -4,9 +4,11 @@ import Logo from "../imgs/logo.jpeg";
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
 import { PUBLICATION_ACTIONS } from "../utils/constants";
+import AuthContext from "../context/authContext";
 
 export default function Header() {
   const { dispatch } = useContext(PublicationContext);
+  const { state } = useContext(AuthContext);
   let menutras = () => {
     let nav = document.querySelector(".cont_header").querySelector("nav");
 
@@ -28,11 +30,14 @@ export default function Header() {
           </div>
           <nav>
             <Input class="input1"></Input>
-            <Link href="/profile">Profile</Link>
-            <Link href="/productPage">{/*TEMPORAL*/}Product Page</Link>
-            <Link className="btn_naranja" href="/auth">
-              <i className="fa-solid fa-user"></i>Login
-            </Link>
+            {state.isAuthenticated ? (
+              <Link href="/profile">Profile</Link>
+            ) : (
+              <Link className="btn_naranja" href="/auth">
+                <i className="fa-solid fa-user"></i>Login
+              </Link>
+            )}
+
             <a href="#">
               <i className="fa-solid fa-cart-shopping letra_verde"></i>
             </a>
