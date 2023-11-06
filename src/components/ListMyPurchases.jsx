@@ -11,6 +11,8 @@ export default function ListMyPurchases({ id }) {
       <h2>My purchases</h2>
       {isLoading ? (
         <p>Loading...</p>
+      ) : data.length < 1 ? (
+        <p>You don't have anything here</p>
       ) : (
         <div>
           {data.map((purchase) => (

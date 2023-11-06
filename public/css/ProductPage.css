@@ -74,6 +74,15 @@
   margin-left: -2.5rem;
 }
 
+.whatsappLink {
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
 /* display: flex;
     flex-direction: column;
     padding: 0rem 1rem; */

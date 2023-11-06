@@ -9,11 +9,15 @@ export default function WishList({ id }) {
     () => getFavoritesByUser(Number(id))
   );
 
+  console.log(favorites);
+
   return (
     <div className="list-of-wish">
       <h2>Wish List</h2>
       {loadingFavorites ? (
         <p>Loading...</p>
+      ) : favorites.length < 1 ? (
+        <p>You don't have any publication in your WishList</p>
       ) : (
         favorites.map((publication) => (
           <CardPublication

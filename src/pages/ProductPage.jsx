@@ -10,6 +10,7 @@ import { createFavorite } from "../services/favorites";
 import { useContext } from "react";
 import AuthContext from "../context/authContext";
 import CarritoContext from "../context/carritoContext";
+import { getUser } from "../services/users";
 
 export const ProductPage = () => {
   const { id } = useParams();
@@ -18,6 +19,10 @@ export const ProductPage = () => {
   const { data: product, isLoading: productLoading } = useQuery(
     ["product", id],
     () => getPublication(id)
+  );
+  const { data: seller, isLoading: sellerLoading } = useQuery(
+    ["seller", product?.userId],
+    () => getUser(product?.userId)
   );
 
   const handleBack = () => {
@@ -70,6 +75,15 @@ export const ProductPage = () => {
             </section>
             <section className="productPage-product-price">
               <label htmlFor={product.name}>{product.price}</label>
+              <a
+                href={`https://wa.me/${seller?.phoneNumber}`}
+                target="_blank"
+                rel="noreferrer"
+                className="whatsappLink"
+              >
+                Contactar por WhatsApp
+              </a>
+
               <button onClick={handleAddToCarrito}>Add to Card</button>
             </section>
           </section>

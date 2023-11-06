@@ -37,9 +37,12 @@ export const deleteFavorite = async (userId, publicationId) => {
       },
     }
   );
-  if (response.status === 200) {
-    return response.status;
+
+  if (response.status === 204) {
+    return true;
   } else {
-    return response.json();
+    throw new Error(
+      `Error al eliminar el favorito. Código de estado: ${response.status}`
+    );
   }
 };

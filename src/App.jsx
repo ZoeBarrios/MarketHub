@@ -5,7 +5,7 @@ import Routes from "./components/Routes";
 import PublicationProvider from "./components/PublicationProvider";
 import CarritoProvider from "./components/CarritoProvider";
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 function App() {
   return (

@@ -9,6 +9,8 @@ export default function List({ isLoading, data, error, listType }) {
     <ul>
       {isLoading ? (
         <Loader />
+      ) : data.length < 1 ? (
+        <p>You don't have anything here</p>
       ) : listType === LIST.PURCHASES ? (
         data.map((purchase) => (
           <CardPurchase key={purchase.purchaseId} purchase={purchase} />
