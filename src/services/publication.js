@@ -62,7 +62,9 @@ export const getPublicationsByCategory = async (category, page, pageSize) => {
   return checkResponse(response);
 };
 
-export const getPublicationsByName = async (name) => {
-  const response = await fetch(`${baseUrl}/publications/name/${name}`);
+export const getPublicationsByName = async (name, page, pageSize) => {
+  const response = await fetch(
+    `${baseUrl}/publications/name/${name}?page=${page}&pageSize=${pageSize}`
+  );
   return checkResponse(response);
 };

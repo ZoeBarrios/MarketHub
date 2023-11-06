@@ -1,33 +1,31 @@
-import React from "react";
 import Header from "../components/Header";
-import Input from "../components/Input";
 import Categorias from "../components/Categorias";
-import Productos from "../components/Productos";
 import Footer from "../components/Footer";
 import {
   getPublications,
   getPublicationsByCategory,
 } from "../services/publication";
-import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Card from "../components/Card";
-import { getCategories } from "../services/category";
+import { useContext } from "react";
+import PublicationContext from "../context/publicationsContex";
 
 function Home() {
-  const [publicationsToShow, setPublicationsToShow] = useState([]);
+  const { publicationsToShow, changePublicationsToShow } =
+    useContext(PublicationContext);
   const {
     isLoading: loadingPublication,
     data: publications,
     error: publicationError,
   } = useQuery("publications", () => getPublications(1, 20), {
     onSuccess: (data) => {
-      setPublicationsToShow(data);
+      changePublicationsToShow(data);
     },
   });
 
   const handleCategoryChance = (id, page = 1, pageSize = 20) => {
     getPublicationsByCategory(id, page, pageSize).then((data) => {
-      setPublicationsToShow(data);
+      changePublicationsToShow(data);
     });
   };
 
@@ -56,7 +54,7 @@ function Home() {
       </div>
 
       <Categorias handleCategoryChance={handleCategoryChance}></Categorias>
- 
+
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
