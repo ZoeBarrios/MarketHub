@@ -17,7 +17,7 @@
 }
 
 .title {
-  color: orangered;
+  color: rgb(98, 0, 255);
 }
 
 .login-form,
@@ -61,11 +61,11 @@
   text-decoration: underline;
 }
 
-input{
+input {
   padding: 10px 14px;
 }
 
-button{
+button {
   border: 3px solid orangered;
   background-color: white;
   padding: 5px 41px;
@@ -76,12 +76,11 @@ button{
   color: orangered;
 }
 
-.auth{
+.auth {
   width: 90%;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
-
-body{
-  box-sizing:border-box;
+body {
+  box-sizing: border-box;
 }

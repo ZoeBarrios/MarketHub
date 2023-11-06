@@ -12,3 +12,9 @@ export const FUNCTION_BTN = {
   VOLVER: "volver",
   FAVORITO: "favorito",
 };
+
+export const PUBLICATIONS = {
+  ALL: "ALL",
+  BY_CATEGORY: "BY_CATEGORY",
+  BY_NAME: "BY_NAME",
+};

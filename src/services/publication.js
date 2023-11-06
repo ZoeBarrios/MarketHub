@@ -1,3 +1,4 @@
+import { PUBLICATIONS } from "../utils/constants";
 import { checkResponse } from "../utils/responses";
 
 const { VITE_API_URL: baseUrl } = import.meta.env;
@@ -67,4 +68,19 @@ export const getPublicationsByName = async (name, page, pageSize) => {
     `${baseUrl}/publications/name/${name}?page=${page}&pageSize=${pageSize}`
   );
   return checkResponse(response);
+};
+
+export const fetchPublication = async (
+  type,
+  page,
+  pageSize,
+  id = null,
+  search = null
+) => {
+  console.log(type);
+  if (PUBLICATIONS.ALL == type) return await getPublications(page, pageSize);
+  if (PUBLICATIONS.BY_CATEGORY == type)
+    return await getPublicationsByCategory(id, page, pageSize);
+  if (PUBLICATIONS.BY_NAME == type)
+    return await getPublicationsByName(search, page, pageSize);
 };

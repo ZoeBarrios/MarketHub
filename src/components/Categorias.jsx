@@ -3,15 +3,19 @@ import { getCategories } from "../services/category";
 import { getPublicationsByCategory } from "../services/publication";
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
+import { PUBLICATIONS } from "../utils/constants";
 
 export default function Categorias() {
-  const { changePublicationsToShow } = useContext(PublicationContext);
+  const { changePublicationsToShow, page, pageSize, setId, setType } =
+    useContext(PublicationContext);
   const {
     isLoading: loadingCategories,
     data: categories,
     error: categoriesError,
   } = useQuery("categories", () => getCategories());
-  const handleCategoryChance = (id, page = 1, pageSize = 20) => {
+  const handleCategoryChance = (id) => {
+    setId(id);
+    setType(PUBLICATIONS.BY_CATEGORY);
     getPublicationsByCategory(id, page, pageSize).then((data) => {
       changePublicationsToShow(data);
     });

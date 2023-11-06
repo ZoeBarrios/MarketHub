@@ -1,14 +1,18 @@
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
 import { getPublicationsByName } from "../services/publication";
+import { PUBLICATIONS } from "../utils/constants";
 
 export default function Input() {
-  const { changePublicationsToShow } = useContext(PublicationContext);
+  const { changePublicationsToShow, page, pageSize, setType, setSearch } =
+    useContext(PublicationContext);
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
       const search = e.target.value;
-      getPublicationsByName(search, 1, 20).then((data) => {
+      setSearch(search);
+      setType(PUBLICATIONS.BY_NAME);
+      getPublicationsByName(search, page, pageSize).then((data) => {
         changePublicationsToShow(data);
       });
     }
