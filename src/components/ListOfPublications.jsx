@@ -1,52 +1,40 @@
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
-import { useQuery } from "react-query";
-import { fetchPublication, getPublications } from "../services/publication";
+import { fetchPublication } from "../services/publication";
 import Card from "./Card";
+import { useEffect } from "react";
+import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../utils/constants";
 
 export default function ListOfPublications() {
-  const {
-    publicationsToShow,
-    changePublicationsToShow,
-    page,
-    nextPage,
-    prevPage,
-    pageSize,
-    type,
-    id,
-    search,
-  } = useContext(PublicationContext);
+  const { state, dispatch } = useContext(PublicationContext);
+  const { page, pageSize, type, id, search, publicationsToShow } = state;
 
-  const {
-    isLoading: loadingPublication,
-    data: publications,
-    error: publicationError,
-  } = useQuery(["publications", page], () => getPublications(page, pageSize), {
-    onSuccess: (data) => {
-      changePublicationsToShow(data);
-    },
-  });
+  useEffect(() => {
+    fetchPublication(type, page, pageSize, id, search).then((data) => {
+      dispatch({ type: PUBLICATION_ACTIONS.SET_PUBLICATIONS, payload: data });
+      if (PUBLICATIONS.BY_CATEGORY === type) {
+        dispatch({ type: PUBLICATION_ACTIONS.SET_ID, payload: id });
+      }
+      if (PUBLICATIONS.BY_NAME === type) {
+        dispatch({ type: PUBLICATION_ACTIONS.SET_SEARCH, payload: search });
+      }
+    });
+  }, [page, pageSize, type, id, search, dispatch]);
 
   const handleNextPage = () => {
-    if (publications.length < pageSize) return;
-    nextPage();
-    fetchPublication(type, page, pageSize, id, search).then((data) => {
-      changePublicationsToShow(data);
-    });
+    if (publicationsToShow.length < pageSize) return;
+    dispatch({ type: PUBLICATION_ACTIONS.NEXT_PAGE });
   };
 
   const handlePrevPage = () => {
     if (page === 1) return;
-    prevPage();
-    fetchPublication(type, page, pageSize, id, search).then((data) => {
-      changePublicationsToShow(data);
-    });
+    dispatch({ type: PUBLICATION_ACTIONS.PREV_PAGE });
   };
 
   return (
     <>
       <div className="cont_productos">
-        {loadingPublication ? (
+        {publicationsToShow.length == 0 ? (
           <h1>Loading...</h1>
         ) : (
           publicationsToShow.map((publication) => (

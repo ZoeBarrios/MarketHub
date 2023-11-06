@@ -1,14 +1,6 @@
 import Header from "../components/Header";
 import Categorias from "../components/Categorias";
 import Footer from "../components/Footer";
-import {
-  getPublications,
-  getPublicationsByCategory,
-} from "../services/publication";
-import { useQuery } from "react-query";
-import Card from "../components/Card";
-import { useContext } from "react";
-import PublicationContext from "../context/publicationsContex";
 import ListOfPublications from "../components/ListOfPublications";
 
 function Home() {

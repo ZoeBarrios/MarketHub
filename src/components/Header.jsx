@@ -1,21 +1,29 @@
-import React from "react";
 import { Link } from "wouter";
-import Routes from "../components/Routes";
 import Input from "./Input";
 import Logo from "../imgs/logo.jpeg";
+import { useContext } from "react";
+import PublicationContext from "../context/publicationsContex";
+import { PUBLICATION_ACTIONS } from "../utils/constants";
 
 export default function Header() {
+  const { dispatch } = useContext(PublicationContext);
   let menutras = () => {
     let nav = document.querySelector(".cont_header").querySelector("nav");
 
     nav.classList.toggle("mostrar");
   };
 
+  const handleReturn = () => {
+    dispatch({
+      type: PUBLICATION_ACTIONS.RESET,
+    });
+  };
+
   return (
     <div>
       <header>
         <div className="cont_header">
-          <div className="logo">
+          <div className="logo" onClick={handleReturn}>
             <img src={Logo} alt="" />
           </div>
           <nav>
