@@ -18,14 +18,14 @@ h1 {
   align-items: self-start;
   justify-content: space-evenly;
   width: 90%;
-  height: 25em;
+  height: 30em;
   margin: 2em;
-  gap: 2em;
 }
 
 .list-publications,
-.list-purchases {
-  flex: 1;
+.list-purchases,
+.list-my-purchases,
+.list-of-wish {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,33 +136,6 @@ label[for="Image"] {
   margin-top: 1em;
 }
 
-.wish-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-}
-
-.list-of-wish {
-  display: flex;
-  flex-direction: column;
-  height: 15em;
-  width: 100%;
-  margin-top: 1em;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: orangered;
-    border-radius: 10px;
-  }
-}
-
 .list-of-wish .card-container {
   width: 80%;
   align-self: center;
@@ -183,4 +156,57 @@ label[for="Image"] {
   border: none;
   width: 100%;
   text-align: end;
+}
+
+.hamburger {
+  position: relative;
+  margin-left: 2em;
+}
+
+.hamburger__icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.hamburger__bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.4s;
+}
+
+.hamburger__bar.open {
+  transform: rotate(-45deg);
+  background-color: #ff0000;
+}
+
+.hamburger__menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 200px;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.hamburger__line {
+  padding: 5px 0;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hamburger__line:hover {
+  background-color: #eee;
 }

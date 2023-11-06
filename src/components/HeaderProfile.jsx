@@ -1,10 +1,14 @@
 import { useContext } from "react";
-import WishList from "./WishList";
 import "/public/css/headerProfile.css";
 import AuthContext from "../context/authContext";
 import { useLocation } from "wouter";
+import Hamburger from "./Hamburger";
 
-export default function HeaderProfile({ userName, email, id }) {
+export default function HeaderProfile({
+  userName,
+
+  handleListToShow,
+}) {
   const { handleLogout } = useContext(AuthContext);
   const [location, setLocation] = useLocation();
   const logout = () => {
@@ -13,9 +17,9 @@ export default function HeaderProfile({ userName, email, id }) {
   };
   return (
     <section className="container-header-profile">
-      <WishList id={id} />
-      <h1>{userName}</h1>
+      <Hamburger handleListToShow={handleListToShow} />
 
+      <h1>{userName}</h1>
       <button onClick={logout} className="wish-list-button">
         Log out
       </button>
