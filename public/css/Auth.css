@@ -30,13 +30,13 @@
   border-radius: 10px;
 }
 
-label {
+.label {
   text-align: left;
   padding: 0.25rem 0;
   color: orangered;
 }
 
-input {
+.input {
   margin: 0.5rem 0;
   padding: 1rem;
   border: none;
@@ -44,7 +44,7 @@ input {
   border: 3px solid orangered;
 }
 
-button {
+.button {
   border: 3px solid orangered;
   background-color: white;
   padding: 20px;

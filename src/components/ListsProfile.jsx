@@ -21,7 +21,7 @@ export default function ListsProfile({ id }) {
   return (
     <section className="list-info-section">
       <div className="list-publications">
-        <h2>Publicaciones Realizadas</h2>
+        <h2>My Publications</h2>
         <List
           isLoading={loadingPublication}
           data={publications}
@@ -30,7 +30,7 @@ export default function ListsProfile({ id }) {
         />
       </div>
       <div className="list-purchases">
-        <h2>Ventas realizadas</h2>
+        <h2>My Purchases</h2>
         <List
           data={purchases}
           isLoading={loadingPurchases}

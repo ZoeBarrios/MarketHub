@@ -44,34 +44,35 @@ export default function FormNewPublication({ UserId }) {
   return (
     <form className="form-new-publication" onSubmit={handleSubmit}>
       <h2>Create a new publication on MarketHub</h2>
-      <label htmlFor="name">Name</label>
-      <input type="text" id="name" name="Name" onChange={handleInputChange} />
-      <label htmlFor="description">Description</label>
-      <textarea
-        id="description"
-        name="Description"
-        onChange={handleInputChange}
-      />
-      <label htmlFor="price">Price</label>
+      <label htmlFor="Name">Name</label>
+      <input type="text" id="Name" name="Name" onChange={handleInputChange} />
+
+      <label htmlFor="Price">Price</label>
       <input
         type="number"
-        id="price"
+        id="Price"
         name="Price"
         onChange={handleInputChange}
       />
       <input type="hidden" id="userId" name="UserId" value={UserId} />
-      <label htmlFor="stock">Stock</label>
+      <label htmlFor="Stock">Stock</label>
       <input
         type="number"
-        id="stock"
+        id="Stock"
         name="Stock"
         min={1}
+        defaultValue={1}
         onChange={handleInputChange}
       />
-      <label htmlFor="image">Imagen</label>
-      <input type="file" id="image" name="Image" onChange={handleInputChange} />
-      <label htmlFor="category">Category</label>
-      <select id="category" name="Category" ref={selectOption}>
+
+      <label htmlFor="Description">Description</label>
+      <textarea
+        id="Description"
+        name="Description"
+        onChange={handleInputChange}
+      />
+      <label htmlFor="Category">Category</label>
+      <select id="Category" name="Category" ref={selectOption}>
         {isLoading
           ? null
           : data?.map((category) => (
@@ -80,6 +81,8 @@ export default function FormNewPublication({ UserId }) {
               </option>
             ))}
       </select>
+      <label htmlFor="Image">Upload an image</label>
+      <input type="file" id="Image" name="Image" onChange={handleInputChange} />
       <button type="submit">Publicar</button>
     </form>
   );
