@@ -1,11 +1,14 @@
 import { checkResponse } from "../utils/responses";
 
 const { VITE_API_URL: baseUrl } = import.meta.env;
+const authorizationHeader = () => {
+  return `Bearer ${localStorage.getItem("token")}`;
+};
 
 export const getFavoritesByUser = async (id) => {
   const response = await fetch(`${baseUrl}/favorites/user/${id}`, {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: authorizationHeader(),
     },
   });
   return checkResponse(response);
@@ -15,7 +18,7 @@ export const createFavorite = async (data) => {
   const response = await fetch(`${baseUrl}/favorites`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: authorizationHeader(),
     },
     body: JSON.stringify(data),
   });
@@ -27,7 +30,7 @@ export const deleteFavorite = async (userId, publicationId) => {
     {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: authorizationHeader(),
       },
     }
   );

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import CarritoContext from "../context/carritoContext";
+import { Link } from "wouter";
 
 export default function Card({ publication }) {
   const { addToCarrito } = useContext(CarritoContext);
@@ -10,7 +11,9 @@ export default function Card({ publication }) {
   return (
     <div className="card" key={publication.publicationId}>
       <div className="cont_imagen">
-        <img src={publication.imageUrl} alt="" />
+        <Link to={`publication/${publication.publicationId}`}>
+          <img src={publication.imageUrl} alt="" />
+        </Link>
       </div>
       <div className="des">
         <h3>{publication.name}</h3>
