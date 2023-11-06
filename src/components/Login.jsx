@@ -3,9 +3,11 @@ import useForm from "../hooks/useForm";
 import { login } from "../services/auth";
 import AuthContext from "../context/authContext";
 import { isEmailOrUsername } from "../services/users";
+import { useLocation } from "wouter";
 
 export const Login = (props) => {
   const { handleLogin } = useContext(AuthContext);
+  const [location, setLocation] = useLocation();
   const { formData, handleInputChange, resetForm } = useForm({
     email: "",
     password: "",
@@ -34,7 +36,7 @@ export const Login = (props) => {
     login({ ...loginData, password })
       .then((user) => {
         handleLogin(user);
-        alert("Welcome back!");
+        setLocation("/profile");
       })
       .catch((error) => {
         alert(error[0]);

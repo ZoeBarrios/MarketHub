@@ -5,12 +5,9 @@ import { LIST } from "../utils/constants";
 import List from "./List";
 
 export default function ListsProfile({ id }) {
-  const {
-    isLoading: loadingPublication,
-    data: publications,
-    error: publicationError,
-  } = useQuery(["publicationUser", id], () =>
-    getPublicationsByUserId(Number(id))
+  const { isLoading: loadingPublication, data: publications } = useQuery(
+    ["publicationUser", id],
+    () => getPublicationsByUserId(Number(id))
   );
 
   const { isLoading: loadingPurchases, data: purchases } = useQuery(
@@ -25,7 +22,6 @@ export default function ListsProfile({ id }) {
         <List
           isLoading={loadingPublication}
           data={publications}
-          error={publicationError}
           listType={LIST.PUBLICATIONS}
         />
       </div>
