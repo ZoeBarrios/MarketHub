@@ -6,6 +6,7 @@ import { ProductPage } from "../pages/ProductPage";
 import { useContext } from "react";
 import AuthContext from "../context/authContext";
 import NotFound from "../pages/NotFound";
+import Carrito from "../pages/Carrito";
 
 function Routes() {
   const { state } = useContext(AuthContext);
@@ -16,6 +17,7 @@ function Routes() {
       <Route path="/auth" component={Auth} />
       {state.isAuthenticated && <Route path="/profile" component={Profile} />}
       <Route path="/publication/:id" component={ProductPage} />
+      <Route path="/carrito" component={Carrito} />
       <Route component={NotFound} />
     </Switch>
   );

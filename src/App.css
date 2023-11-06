@@ -8,6 +8,24 @@ body {
   padding: 0;
 }
 
+.contenedor-carrito {
+  position: relative;
+}
+
+.carrito-numero {
+  position: absolute;
+  top: -10px;
+  left: 1em;
+  background-color: orangered;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cont_header {
   /* background-color: brown;*/
 

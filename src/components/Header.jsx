@@ -4,14 +4,15 @@ import Logo from "../imgs/logo.jpeg";
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
 import { PUBLICATION_ACTIONS } from "../utils/constants";
+import CarritoContext from "../context/carritoContext";
 import AuthContext from "../context/authContext";
 
 export default function Header() {
   const { dispatch } = useContext(PublicationContext);
   const { state } = useContext(AuthContext);
+  const { carrito } = useContext(CarritoContext);
   let menutras = () => {
     let nav = document.querySelector(".cont_header").querySelector("nav");
-
     nav.classList.toggle("mostrar");
   };
 
@@ -31,16 +32,20 @@ export default function Header() {
           <nav>
             <Input class="input1"></Input>
             {state.isAuthenticated ? (
-              <Link href="/profile">Profile</Link>
+              <Link to="/profile">Profile</Link>
             ) : (
-              <Link className="btn_naranja" href="/auth">
+              <Link className="btn_naranja" to="/auth">
                 <i className="fa-solid fa-user"></i>Login
               </Link>
             )}
-
-            <a href="#">
-              <i className="fa-solid fa-cart-shopping letra_verde"></i>
-            </a>
+            <div className="contenedor-carrito">
+              <Link to="/carrito">
+                <i className="fa-solid fa-cart-shopping letra_verde"></i>
+                {carrito.length > 0 && (
+                  <span className="carrito-numero">{carrito.length}</span>
+                )}
+              </Link>
+            </div>
           </nav>
           <a onClick={menutras} className="menu_ham">
             <i className="fa-solid fa-bars"></i>

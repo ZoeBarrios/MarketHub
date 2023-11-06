@@ -3,6 +3,7 @@ import "./App.css";
 import AuthProvider from "./components/AuthProvider";
 import Routes from "./components/Routes";
 import PublicationProvider from "./components/PublicationProvider";
+import CarritoProvider from "./components/CarritoProvider";
 
 const queryClient = new QueryClient();
 
@@ -11,9 +12,11 @@ function App() {
     <>
       <AuthProvider>
         <PublicationProvider>
-          <QueryClientProvider client={queryClient}>
-            <Routes />
-          </QueryClientProvider>
+          <CarritoProvider>
+            <QueryClientProvider client={queryClient}>
+              <Routes />
+            </QueryClientProvider>
+          </CarritoProvider>
         </PublicationProvider>
       </AuthProvider>
     </>
