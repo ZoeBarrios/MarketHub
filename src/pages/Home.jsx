@@ -56,7 +56,7 @@ function Home() {
       </div>
 
       <Categorias handleCategoryChance={handleCategoryChance}></Categorias>
-
+ 
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>

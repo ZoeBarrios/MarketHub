@@ -57,6 +57,31 @@ button {
 .link-btn {
   border: none;
   background: none;
-  color: orangered;
+  color: red;
   text-decoration: underline;
+}
+
+input{
+  padding: 10px 14px;
+}
+
+button{
+  border: 3px solid orangered;
+  background-color: white;
+  padding: 5px 41px;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: orangered;
+}
+
+.auth{
+  width: 90%;
+    margin: 0 auto;
+}
+
+
+body{
+  box-sizing:border-box;
 }
