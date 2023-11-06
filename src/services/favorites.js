@@ -18,10 +18,13 @@ export const createFavorite = async (data) => {
   const response = await fetch(`${baseUrl}/favorites`, {
     method: "POST",
     headers: {
+      "Content-Type": "application/json",
+
       Authorization: authorizationHeader(),
     },
     body: JSON.stringify(data),
   });
+  return checkResponse(response);
 };
 
 export const deleteFavorite = async (userId, publicationId) => {
