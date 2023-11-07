@@ -4,6 +4,37 @@ import Footer from "../components/Footer";
 import ListOfPublications from "../components/ListOfPublications";
 
 function Home() {
+<<<<<<< HEAD
+  const [publicationsToShow, setPublicationsToShow] = useState([]);
+  const {
+    isLoading: loadingPublication,
+    data: publications,
+    error: publicationError,
+  } = useQuery("publications", () => getPublications(1, 20));
+
+  console.log(publications)
+
+
+  let renderizado = publications.map((e) => {
+    return (
+      <div className="card" key={e.id}>
+        <div className="cont_imagen">
+          <img src={e.imageUrl} alt="" />
+        </div>
+        <div className="des">
+          <h3>{e.name}</h3>
+          <div className="precio">
+            <h3>${e.price}.00</h3>
+            <a href=""><i className="fa-solid fa-cart-shopping car_card"></i> Add to Card</a>
+          </div>
+        </div>
+      </div>)
+  })
+
+
+ 
+=======
+>>>>>>> 7ea62feae226be190a4326a958a886e34e97256b
   return (
     <div>
       <Header></Header>
@@ -34,7 +65,15 @@ function Home() {
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
         </div>
+<<<<<<< HEAD
+        <div className="cont_productos">
+          {
+            renderizado
+          }
+        </div>
+=======
         <ListOfPublications />
+>>>>>>> 7ea62feae226be190a4326a958a886e34e97256b
       </div>
 
       <Footer></Footer>
