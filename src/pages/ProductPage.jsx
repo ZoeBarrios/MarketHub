@@ -7,7 +7,7 @@ import { getPublication } from "../services/publication";
 import Loader from "../components/Loader";
 import Comments from "../components/Comments";
 import { createFavorite } from "../services/favorites";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../context/authContext";
 import CarritoContext from "../context/carritoContext";
 import { getUser } from "../services/users";
@@ -21,13 +21,15 @@ export const ProductPage = () => {
   const { state } = useContext(AuthContext);
   const { isOpen, openModal, closeModal } = useModal();
   const { addToCarrito } = useContext(CarritoContext);
+  const [seller, setSeller] = useState({});
   const { data: product, isLoading: productLoading } = useQuery(
     ["product", id],
-    () => getPublication(id)
-  );
-  const { data: seller, isLoading: sellerLoading } = useQuery(
-    ["seller", product?.userId],
-    () => getUser(product?.userId)
+    () => getPublication(id),
+    {
+      onSuccess: (data) => {
+        getUser(data.userId).then((res) => setSeller(res));
+      },
+    }
   );
 
   const handleBack = () => {
@@ -35,13 +37,6 @@ export const ProductPage = () => {
   };
 
   const handleButton = () => {
-    if (product.isPaused) {
-      toast("This publication is paused", {
-        autoClose: 1500,
-        type: "warning",
-      });
-      return;
-    }
     if (state.user.id === product.userId) {
       openModal();
       return;

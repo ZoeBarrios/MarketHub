@@ -5,6 +5,18 @@ import { toast } from "react-toastify";
 import { queryClient } from "../App";
 import { useLocation } from "wouter";
 
+function verification(formData) {
+  if (formData.get("stock") < 0) {
+    toast.error("Stock no puede ser negativo");
+    return;
+  }
+  if (formData.get("price") < 0) {
+    toast.error("Precio no puede ser negativo");
+    return;
+  }
+  return true;
+}
+
 export default function FormUpdatePublication({ publication }) {
   const [location, setLocation] = useLocation();
   const { mutate } = useMutation(
@@ -16,12 +28,17 @@ export default function FormUpdatePublication({ publication }) {
       },
     }
   );
+  console.log(publication);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
-    mutate(data);
+
+    if (verification(formData)) {
+      const data = Object.fromEntries(formData);
+
+      mutate(data);
+    }
   };
 
   const handleDelete = (e) => {
@@ -59,7 +76,7 @@ export default function FormUpdatePublication({ publication }) {
         type="number"
         name="stock"
         id="stock"
-        min={1}
+        min={0}
         defaultValue={publication.stock}
       />
       <button type="button" onClick={handleDelete}>
