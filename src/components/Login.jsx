@@ -4,6 +4,7 @@ import { login } from "../services/auth";
 import AuthContext from "../context/authContext";
 import { isEmailOrUsername } from "../services/users";
 import { useLocation } from "wouter";
+import { toast } from "react-toastify";
 
 export const Login = (props) => {
   const { handleLogin } = useContext(AuthContext);
@@ -20,7 +21,10 @@ export const Login = (props) => {
       (key) => formData[key] === ""
     );
     if (emptyFields.length > 0) {
-      alert(`Please fill the following fields: ${emptyFields.join(", ")}`);
+      toast(`Please fill the following fields: ${emptyFields.join(", ")}`, {
+        autoClose: 1500,
+        type: "warning",
+      });
       return;
     }
 
@@ -39,7 +43,8 @@ export const Login = (props) => {
         setLocation("/");
       })
       .catch((error) => {
-        alert(error[0]);
+        console.log(error);
+        toast(error.message, { autoClose: 1500, type: "error" });
       });
   };
 

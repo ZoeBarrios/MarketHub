@@ -11,6 +11,7 @@ import { useContext } from "react";
 import AuthContext from "../context/authContext";
 import CarritoContext from "../context/carritoContext";
 import { getUser } from "../services/users";
+import { toast } from "react-toastify";
 
 export const ProductPage = () => {
   const { id } = useParams();
@@ -39,9 +40,15 @@ export const ProductPage = () => {
         publicationId: Number(id),
         userId: state.user.id,
       });
-      alert("Favorite Added");
+      toast("Favorite added successfully", {
+        autoClose: 1500,
+        type: "success",
+      });
     } catch (err) {
-      alert(err);
+      toast("You already have this favorite", {
+        autoClose: 1500,
+        type: "warning",
+      });
     }
   };
 

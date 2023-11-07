@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import useForm from "../hooks/useForm";
 import { register } from "../services/auth";
 
@@ -16,19 +17,22 @@ export const Register = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("Passwords don't match");
+      toast("Passwords don't match", { autoClose: 1500, type: "error" });
       return;
     }
     let emptyFields = Object.keys(formData).filter(
       (key) => formData[key] === ""
     );
     if (emptyFields.length > 0) {
-      alert(`Please fill the following fields: ${emptyFields.join(", ")}`);
+      toast(`Please fill the following fields: ${emptyFields.join(", ")}`, {
+        autoClose: 1500,
+        type: "warning",
+      });
       return;
     }
     register(formData)
       .catch((error) => {
-        alert(error);
+        toast(error.message, { autoClose: 1500, type: "error" });
       })
       .then(() => {
         resetForm();

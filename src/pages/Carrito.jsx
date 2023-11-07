@@ -4,6 +4,7 @@ import "/public/css/cart.css";
 import PublicationCart from "../components/PublicationCart";
 import { DISCOUNTS_CODES } from "../utils/constants";
 import AuthContext from "../context/authContext";
+import { toast } from "react-toastify";
 
 export default function Carrito() {
   const { carrito } = useContext(CarritoContext);
@@ -19,19 +20,19 @@ export default function Carrito() {
     if (event.key === "Enter") {
       if (event.target.value === DISCOUNTS_CODES.CECCHIELMEJOR) {
         setArgTax(0);
-        alert("Discount applied");
+        toast("Discount applied", { autoClose: 1500, type: "success" });
         setIsDiscountApplied(true);
       } else {
-        alert("Invalid discount code");
+        toast("Invalid discount code", { autoClose: 1500, type: "error" });
       }
     }
   };
 
   const handleBuy = () => {
     if (state.isAuthenticated) {
-      alert("Purchase completed");
+      toast("Purchase completed", { autoClose: 1500, type: "success" });
     } else {
-      alert("You must be logged in to buy");
+      toast("You must be logged in to buy", { autoClose: 1500, type: "error" });
     }
   };
   return (
