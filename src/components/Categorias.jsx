@@ -3,6 +3,7 @@ import { getCategories } from "../services/category";
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
 import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../utils/constants";
+import Loader from "./Loader";
 
 export default function Categorias() {
   const { dispatch } = useContext(PublicationContext);
@@ -21,7 +22,7 @@ export default function Categorias() {
   return (
     <div>
       {loadingCategories ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : (
         <div className="fondo_categorias">
           <div className="cont_categorias">

@@ -3,6 +3,7 @@ import { getCategories } from "../services/category";
 import { useRef, useState } from "react";
 import { createPublication } from "../services/publication";
 import { toast } from "react-toastify";
+import Loader from "./Loader";
 
 export default function FormNewPublication({ UserId }) {
   const { data, isLoading } = useQuery(["categories"], () => getCategories());
@@ -72,13 +73,15 @@ export default function FormNewPublication({ UserId }) {
       />
       <label htmlFor="Category">Category</label>
       <select id="Category" name="Category" ref={selectOption}>
-        {isLoading
-          ? null
-          : data?.map((category) => (
-              <option key={category.categoryId} value={category.categoryId}>
-                {category.name}
-              </option>
-            ))}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          data?.map((category) => (
+            <option key={category.categoryId} value={category.categoryId}>
+              {category.name}
+            </option>
+          ))
+        )}
       </select>
       <label htmlFor="Image">Upload an image</label>
       <input type="file" id="Image" name="Image" onChange={handleInputChange} />
