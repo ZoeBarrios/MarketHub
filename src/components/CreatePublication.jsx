@@ -1,17 +1,23 @@
-import { useState } from "react";
 import FormNewPublication from "./FormNewPublication";
+import useModal from "../hooks/useModal";
+import Modal from "./Modal";
 
 export default function CreatePublication({ id }) {
-  const [showForm, setShowForm] = useState(false);
-  const handleClick = () => {
-    setShowForm(!showForm);
-  };
+  const { isOpen, closeModal, openModal } = useModal();
   return (
-    <div className="new-publication">
-      <button onClick={handleClick} className="button-create-publication">
-        {showForm ? "cancel" : "Create new publication"}
+    <>
+      <button onClick={openModal} className="button-create-publication">
+        {isOpen ? "cancel" : "Create new publication"}
       </button>
-      {showForm ? <FormNewPublication UserId={id} /> : null}
-    </div>
+      {isOpen && (
+        <Modal closeModal={closeModal}>
+          <button onClick={closeModal} className="close-modal-button">
+            X
+          </button>
+
+          <FormNewPublication UserId={id} closeModal={closeModal} />
+        </Modal>
+      )}
+    </>
   );
 }

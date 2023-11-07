@@ -2,16 +2,25 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import AuthProvider from "./components/AuthProvider";
 import Routes from "./components/Routes";
+import PublicationProvider from "./components/PublicationProvider";
+import CarritoProvider from "./components/CarritoProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 function App() {
   return (
     <>
       <AuthProvider>
-        <QueryClientProvider client={queryClient}>
-          <Routes />
-        </QueryClientProvider>
+        <PublicationProvider>
+          <CarritoProvider>
+            <QueryClientProvider client={queryClient}>
+              <ToastContainer />
+              <Routes />
+            </QueryClientProvider>
+          </CarritoProvider>
+        </PublicationProvider>
       </AuthProvider>
     </>
   );

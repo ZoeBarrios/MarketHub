@@ -14,15 +14,21 @@
 .login-form {
   display: flex;
   flex-direction: column;
+  gap: 11px;
+  padding: 24px 31px;
 }
 
 .title {
+  color: rgb(98, 0, 255);
   color: orangered;
 }
 
 .login-form,
 .register-form {
   border: 3px solid orangered;
+  border-width: 1px;
+  border-radius: 1em;
+  background-color: white;
 }
 
 .auth-form-container {
@@ -30,21 +36,22 @@
   border-radius: 10px;
 }
 
-label {
+.label {
   text-align: left;
   padding: 0.25rem 0;
   color: orangered;
 }
 
-input {
+.input {
   margin: 0.5rem 0;
   padding: 1rem;
   border: none;
   border-radius: 10px;
   border: 3px solid orangered;
+  border-radius: 11px;
 }
 
-button {
+.button {
   border: 3px solid orangered;
   background-color: white;
   padding: 20px;
@@ -57,6 +64,35 @@ button {
 .link-btn {
   border: none;
   background: none;
-  color: orangered;
+  color: red;
+
+  width: 100%;
   text-decoration: underline;
+}
+
+input {
+  padding: 10px 14px;
+  border-radius: 11px;
+}
+
+button {
+  border: 3px solid orangered;
+  background-color: white;
+  padding: 5px 41px;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: orangered;
+  border-width: 1px;
+}
+
+.auth {
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #ededed;
 }

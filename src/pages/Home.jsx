@@ -1,19 +1,10 @@
-import React from "react";
 import Header from "../components/Header";
-import Input from "../components/Input";
 import Categorias from "../components/Categorias";
-import Productos from "../components/Productos";
 import Footer from "../components/Footer";
-import {
-  getPublications,
-  getPublicationsByCategory,
-} from "../services/publication";
-import { useEffect, useState } from "react";
-import { useQuery } from "react-query";
-import Card from "../components/Card";
-import { getCategories } from "../services/category";
+import ListOfPublications from "../components/ListOfPublications";
 
 function Home() {
+<<<<<<< HEAD
   const [publicationsToShow, setPublicationsToShow] = useState([]);
   const {
     isLoading: loadingPublication,
@@ -42,6 +33,8 @@ function Home() {
 
 
  
+=======
+>>>>>>> 7ea62feae226be190a4326a958a886e34e97256b
   return (
     <div>
       <Header></Header>
@@ -66,17 +59,21 @@ function Home() {
         <h1>Categorys</h1>
       </div>
 
-      <Categorias handleCategoryChance={handleCategoryChance}></Categorias>
+      <Categorias></Categorias>
 
       <div className="fondo2">
         <div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
         </div>
+<<<<<<< HEAD
         <div className="cont_productos">
           {
             renderizado
           }
         </div>
+=======
+        <ListOfPublications />
+>>>>>>> 7ea62feae226be190a4326a958a886e34e97256b
       </div>
 
       <Footer></Footer>

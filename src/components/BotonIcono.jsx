@@ -1,7 +1,6 @@
 import { FUNCTION_BTN } from "../utils/constants";
 
-export const BotonIcono = ({ functionBtn }) => {
-  console.log(functionBtn);
+export const BotonIcono = ({ functionBtn, OnClick }) => {
   return (
     <button
       className={`productPage-btnIcono ${
@@ -9,6 +8,7 @@ export const BotonIcono = ({ functionBtn }) => {
           ? "fa-solid fa-chevron-left"
           : "fa-regular fa-heart"
       }`}
+      onClick={OnClick}
     ></button>
   );
 };

@@ -1,14 +1,23 @@
-import React from "react";
 import { useQuery } from "react-query";
 import { getCategories } from "../services/category";
+import { useContext } from "react";
+import PublicationContext from "../context/publicationsContex";
+import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../utils/constants";
 
-export default function Categorias({ handleCategoryChance }) {
+export default function Categorias() {
+  const { dispatch } = useContext(PublicationContext);
   const {
     isLoading: loadingCategories,
     data: categories,
     error: categoriesError,
   } = useQuery("categories", () => getCategories());
-
+  const handleCategoryChance = (id) => {
+    dispatch({ type: PUBLICATION_ACTIONS.SET_ID, payload: id });
+    dispatch({
+      type: PUBLICATION_ACTIONS.SET_TYPE,
+      payload: PUBLICATIONS.BY_CATEGORY,
+    });
+  };
   return (
     <div>
       {loadingCategories ? (

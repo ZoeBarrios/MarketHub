@@ -1,135 +1,146 @@
 import { BotonIcono } from "../components/BotonIcono";
 import { FUNCTION_BTN } from "../utils/constants";
-import { useId } from "react";
 import "../../public/css/ProductPage.css";
+import { useParams } from "wouter";
+import { useQuery } from "react-query";
+import { getPublication } from "../services/publication";
+import Loader from "../components/Loader";
+import Comments from "../components/Comments";
+import { createFavorite } from "../services/favorites";
+import { useContext, useState } from "react";
+import AuthContext from "../context/authContext";
+import CarritoContext from "../context/carritoContext";
+import { getUser } from "../services/users";
+import { toast } from "react-toastify";
+import Modal from "../components/Modal";
+import FormUpdatePublication from "../components/FormUpdatePublication";
+import useModal from "../hooks/useModal";
 
 export const ProductPage = () => {
-  // TEMP
-  let dataTemp = {
-    PublicationId: 1,
-    Name: "Zapatos elegantes",
-    Description:
-      "Assumenda iusto unde officia eum. Incidunt molestiae perspiciatis est commodi alias laboriosam dolor et libero. Et voluptatem repudiandae non eum quibusdam ipsam quis.Assumenda iusto unde officia eum. Incidunt molestiae perspiciatis est commodi alias laboriosam dolor et libero. Et voluptatem repudiandae non eum quibusdam ipsam quis.Assumenda iusto unde officia eum. Incidunt molestiae perspiciatis est commodi alias laboriosam dolor et libero. Et voluptatem repudiandae non eum quibusdam ipsam quis123456789123",
-    Price: "$8479.85",
-    Stock: 116,
-    UserId: 15,
-    CategoryId: 3,
-    ImageUrl: "/img/test.jpg",
-    Comentaries: [
-      {
-        reseña: "Interesante, pero un poco confuso.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
+  const { id } = useParams();
+  const { state } = useContext(AuthContext);
+  const { isOpen, openModal, closeModal } = useModal();
+  const { addToCarrito } = useContext(CarritoContext);
+  const [seller, setSeller] = useState({});
+  const { data: product, isLoading: productLoading } = useQuery(
+    ["product", id],
+    () => getPublication(id),
+    {
+      onSuccess: (data) => {
+        getUser(data.userId).then((res) => setSeller(res));
       },
-      {
-        reseña: "Bueno, pero podría ser mejor.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Divertido, pero demasiado corto.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Original, pero no tan emocionante.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Informativo, pero algo aburrido.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Recomendable, pero un poco caro.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Entretenido, pero predecible en partes.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Creativo, pero falta profundidad.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Diferente, pero no impresionante.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Interesante, pero algo confuso.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Entretenido, pero demasiado largo.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Intrigante, pero desenlace decepcionante.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Único, pero podría ser mejor.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Atractivo, pero algo repetitivo.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Sorprendente, pero con fallos notables.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Fascinante, pero ritmo irregular.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Prometedor, pero no cumple totalmente.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Pintoresco, pero falta profundidad.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Innovador, pero no del todo.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-      {
-        reseña: "Diverso, pero no tan memorable.",
-        puntuación: Math.floor(Math.random() * 5) + 1,
-      },
-    ],
+    }
+  );
+
+  const handleBack = () => {
+    window.history.back();
   };
+
+  const handleButton = () => {
+    if (state?.user?.id == product.userId) {
+      openModal();
+      return;
+    } else {
+      addToCarrito(product);
+      toast("Product added to cart", {
+        autoClose: 1500,
+        type: "success",
+      });
+    }
+  };
+
+  const handleFavorite = async () => {
+    if (!state.user) {
+      toast("You must be logged in to add a favorite", {
+        autoClose: 1500,
+        type: "warning",
+      });
+      return;
+    }
+    if (product.isPaused) {
+      toast("You can't add a favorite to a paused publication", {
+        autoClose: 1500,
+        type: "warning",
+      });
+      return;
+    }
+    try {
+      const res = await createFavorite({
+        publicationId: Number(id),
+        userId: state.user.id,
+      });
+      toast("Favorite added successfully", {
+        autoClose: 1500,
+        type: "success",
+      });
+    } catch (err) {
+      toast("You already have this favorite", {
+        autoClose: 1500,
+        type: "warning",
+      });
+    }
+  };
+
   return (
     <>
-      <main>
-        <section className="productPage-hearder">
-          <BotonIcono functionBtn={FUNCTION_BTN.VOLVER} />
-          <BotonIcono functionBtn={FUNCTION_BTN.FAVORITO} />
-        </section>
-        <section className="productPage-product">
-          <div className="productPage-product-1stSection">
-            <img src={dataTemp.ImageUrl} alt={dataTemp.Name} />
-            <h3>{dataTemp.Name}</h3>
-            <p className="productPage-product-description">
-              {dataTemp.Description}
-            </p>
-            <h3 className="ReviewTitle">Reseña</h3>
-            <section className="comentarySection">
-              <ul>
-                {dataTemp.Comentaries.map((Comentary) => (
-                  <li key={useId} className="comentarySection-values">
-                    <label htmlFor="">{Comentary.reseña}</label>
-                    <label htmlFor="">{Comentary.puntuación}⭐</label>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-          <section className="productPage-product-price">
-            <label htmlFor={dataTemp.Name}>{dataTemp.Price}</label>
-            <button>Add to Card</button>
+      {productLoading ? (
+        <Loader />
+      ) : (
+        <main>
+          <section className="productPage-hearder">
+            <BotonIcono
+              functionBtn={FUNCTION_BTN.VOLVER}
+              OnClick={handleBack}
+            />
+            <BotonIcono
+              functionBtn={FUNCTION_BTN.FAVORITO}
+              OnClick={handleFavorite}
+            />
           </section>
-        </section>
-      </main>
+          <section className="productPage-product">
+            <div className="productPage-product-1stSection">
+              <img src={product.imageUrl} alt={product.name} />
+              <h3>
+                {product.name}{" "}
+                <span>{product.isPaused ? "Paused Publication" : null}</span>
+              </h3>
+
+              <p className="productPage-product-description">
+                {product.description}
+              </p>
+            </div>
+            <section className="comentarySection">
+              <h3 className="ReviewTitle">Reseña</h3>
+              <Comments id={id} />
+            </section>
+            <section className="productPage-product-price">
+              <label htmlFor={product.name}>{product.price}</label>
+              <a
+                href={`https://wa.me/${seller?.phoneNumber}`}
+                target="_blank"
+                rel="noreferrer"
+                className="whatsappLink"
+              >
+                Contactar por WhatsApp
+              </a>
+
+              <button onClick={handleButton}>
+                {state?.user?.id === product.userId
+                  ? "Editar"
+                  : "Agregar al carrito"}
+              </button>
+              {isOpen ? (
+                <Modal>
+                  <button onClick={closeModal} className="close-modal-button">
+                    X
+                  </button>
+                  <FormUpdatePublication publication={product} />
+                </Modal>
+              ) : null}
+            </section>
+          </section>
+        </main>
+      )}
     </>
   );
 };
