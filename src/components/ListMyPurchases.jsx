@@ -19,7 +19,10 @@ export default function ListMyPurchases({ id }) {
       ) : (
         <div>
           {data.map((purchase) => (
-            <CardPurchase purchase={purchase} key={purchase.publicationId} />
+            <CardPurchase
+              purchase={purchase}
+              key={purchase.publicationId + purchase.purchaseDate}
+            />
           ))}
         </div>
       )}

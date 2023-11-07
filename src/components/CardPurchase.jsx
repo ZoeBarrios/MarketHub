@@ -13,9 +13,12 @@ export default function CardPurchase({ purchase }) {
 
   const date = new Date(purchase.purchaseDate).toLocaleDateString();
   return (
-    <li key={purchase.purchaseId} className="card-container">
+    <li className="card-container">
       {purchase.publications.map((publication) => (
-        <div key={publication.publicationId} className="purchase-publication">
+        <div
+          key={publication.publicationId + purchase.purchaseDate}
+          className="purchase-publication"
+        >
           <img
             src={publication.imageUrl}
             alt={publication.name}
