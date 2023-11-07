@@ -6,7 +6,7 @@ export default function FormCreateComment({ publicationId, userId }) {
     e.preventDefault();
     const text = e.target.text.value;
     const rating = e.target.rating.value;
-    console.log(publicationId, userId);
+
     createComment({
       text: text,
       rating: Number(rating),

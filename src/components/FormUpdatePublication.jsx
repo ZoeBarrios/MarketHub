@@ -28,7 +28,6 @@ export default function FormUpdatePublication({ publication }) {
       },
     }
   );
-  console.log(publication);
 
   const handleSubmit = (e) => {
     e.preventDefault();

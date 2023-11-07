@@ -85,7 +85,6 @@ export const fetchPublication = async (
   id = null,
   search = null
 ) => {
-  console.log(type);
   if (PUBLICATIONS.ALL == type) return await getPublications(page, pageSize);
   if (PUBLICATIONS.BY_CATEGORY == type)
     return await getPublicationsByCategory(id, page, pageSize);

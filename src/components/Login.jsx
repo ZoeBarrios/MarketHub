@@ -43,7 +43,6 @@ export const Login = (props) => {
         setLocation("/");
       })
       .catch((error) => {
-        console.log(error);
         toast(error.message, { autoClose: 1500, type: "error" });
       });
   };
