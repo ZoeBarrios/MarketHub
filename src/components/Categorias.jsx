@@ -25,15 +25,17 @@ export default function Categorias() {
       ) : (
         <div className="fondo_categorias">
           <div className="cont_categorias">
-            {categories.map((category) => (
-              <a
-                href="#"
-                key={category.categoryId}
-                onClick={() => handleCategoryChance(category.categoryId)}
-              >
-                {category.name}
-              </a>
-            ))}
+            {categories
+              ? categories.map((category) => (
+                  <a
+                    href="#"
+                    key={category.categoryId}
+                    onClick={() => handleCategoryChance(category.categoryId)}
+                  >
+                    {category.name}
+                  </a>
+                ))
+              : null}
           </div>
         </div>
       )}

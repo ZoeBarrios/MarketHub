@@ -1,15 +1,12 @@
-import { useMutation, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { getCategories } from "../services/category";
 import { useRef, useState } from "react";
 import { createPublication } from "../services/publication";
+import { toast } from "react-toastify";
 
 export default function FormNewPublication({ UserId }) {
   const { data, isLoading } = useQuery(["categories"], () => getCategories());
-  const mutation = useMutation(createPublication, {
-    onSettled: () => {
-      mutation.mutate("publicationUser");
-    },
-  });
+
   const selectOption = useRef(null);
   const [formData, setFormData] = useState({
     Name: "",
@@ -30,7 +27,9 @@ export default function FormNewPublication({ UserId }) {
 
     formDataToSend.append("CategoryId", selectOption.current.value);
 
-    mutation.mutate(formDataToSend);
+    createPublication(formDataToSend).then((data) => {
+      toast.success("Publication created successfully");
+    });
   };
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;

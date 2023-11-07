@@ -44,6 +44,7 @@ function Profile() {
         handleListToShow={handleListToShow}
       />
       <section className="list-info-section">{listToRender()}</section>
+      <CreatePublication id={id} />
     </div>
   );
 }
