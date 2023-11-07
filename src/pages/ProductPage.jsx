@@ -37,7 +37,7 @@ export const ProductPage = () => {
   };
 
   const handleButton = () => {
-    if (state.user.id === product.userId) {
+    if (state?.user?.id == product.userId) {
       openModal();
       return;
     } else {
@@ -50,6 +50,13 @@ export const ProductPage = () => {
   };
 
   const handleFavorite = async () => {
+    if (!state.user) {
+      toast("You must be logged in to add a favorite", {
+        autoClose: 1500,
+        type: "warning",
+      });
+      return;
+    }
     if (product.isPaused) {
       toast("You can't add a favorite to a paused publication", {
         autoClose: 1500,
@@ -118,7 +125,7 @@ export const ProductPage = () => {
               </a>
 
               <button onClick={handleButton}>
-                {state.user.id === product.userId
+                {state?.user?.id === product.userId
                   ? "Editar"
                   : "Agregar al carrito"}
               </button>
