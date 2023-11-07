@@ -40,6 +40,7 @@ export const updatePublication = async (id, data) => {
   const response = await fetch(`${baseUrl}/publications/${id}`, {
     method: "PUT",
     headers: {
+      "Content-Type": "application/json",
       Authorization: authorizationHeader(),
     },
     body: JSON.stringify(data),
@@ -54,7 +55,13 @@ export const deletePublication = async (id) => {
       Authorization: authorizationHeader(),
     },
   });
-  return checkResponse(response);
+  if (response.status === 204) {
+    return true;
+  } else {
+    throw new Error(
+      `Error al eliminar el favorito. Código de estado: ${response.status}`
+    );
+  }
 };
 
 export const getPublicationsByCategory = async (category, page, pageSize) => {

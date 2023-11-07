@@ -9,8 +9,6 @@ export default function WishList({ id }) {
     () => getFavoritesByUser(Number(id))
   );
 
-  console.log(favorites);
-
   return (
     <div className="list-of-wish">
       <h2>Wish List</h2>

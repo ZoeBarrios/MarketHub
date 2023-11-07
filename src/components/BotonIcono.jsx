@@ -1,7 +1,6 @@
 import { FUNCTION_BTN } from "../utils/constants";
 
 export const BotonIcono = ({ functionBtn, OnClick }) => {
-  console.log(functionBtn);
   return (
     <button
       className={`productPage-btnIcono ${
