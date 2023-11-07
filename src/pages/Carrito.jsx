@@ -5,6 +5,7 @@ import PublicationCart from "../components/PublicationCart";
 import { DISCOUNTS_CODES } from "../utils/constants";
 import AuthContext from "../context/authContext";
 import { toast } from "react-toastify";
+import { createPurchase } from "../services/purchases";
 
 export default function Carrito() {
   const { carrito } = useContext(CarritoContext);
@@ -30,6 +31,13 @@ export default function Carrito() {
 
   const handleBuy = () => {
     if (state.isAuthenticated) {
+      createPurchase({
+        amount: total + argTax,
+        userId: state.user.id,
+        sellerId: carrito[0].userId,
+        publicationsIds: carrito.map((item) => item.publicationId),
+      });
+
       toast("Purchase completed", { autoClose: 1500, type: "success" });
     } else {
       toast("You must be logged in to buy", { autoClose: 1500, type: "error" });

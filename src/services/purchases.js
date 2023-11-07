@@ -31,3 +31,16 @@ export const getPurchaseByUser = async (id) => {
   });
   return checkResponse(response);
 };
+
+export const createPurchase = async (purchase) => {
+  const response = await fetch(`${baseUrl}/purchases`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: authorizationHeader(),
+    },
+    body: JSON.stringify(purchase),
+  });
+
+  return checkResponse(response);
+};

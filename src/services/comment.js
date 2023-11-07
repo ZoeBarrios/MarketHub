@@ -14,6 +14,7 @@ export const createComment = async (data) => {
   const response = await fetch(`${baseUrl}/comments`, {
     method: "POST",
     headers: {
+      "Content-Type": "application/json",
       authorization: authorizationHeader(),
     },
     body: JSON.stringify(data),
