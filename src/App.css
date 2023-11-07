@@ -226,7 +226,7 @@ input {
 
 .i_buscador {
   position: absolute;
-  top: 8px;
+  top: 13px;
   left: 12px;
   color: rgb(109, 109, 109);
 }
@@ -438,4 +438,23 @@ footer {
     flex-direction: column;
     width: 100%;
   }
+}
+
+
+
+
+
+@media (max-width:350px){
+
+.cont_productos{
+  grid-template-columns: 1fr;
+}
+
+
+.cont_fondo1 h1 {
+  line-height: 80px;
+  font-size: 40px;
+}
+
+
 }
