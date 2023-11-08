@@ -305,6 +305,102 @@ footer {
   cursor: not-allowed;
 }
 
+
+.cont_ofertas{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card_ofertas{
+
+
+background-size: cover;
+padding: 10px 15px;
+border-radius: 10px;
+background-position: center;
+}
+
+#oferta1{
+  background: linear-gradient(to right, #0a0c0d33, #0c101417), url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/10/banner-32.jpg);
+background-position: right;
+}
+
+#oferta2{
+  background: linear-gradient(to right, #0a0c0d33, #0c101417), url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/07/banner-33-1.jpg);
+background-position: right;
+}
+
+#oferta3{
+  background: linear-gradient(to right, #0a0c0d33, #0c101417), url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/07/banner-34-1.jpg);
+  background-position: right;
+
+}
+
+.card_ofertas h3{
+color: rgb(0, 110, 255);
+}
+
+.card_ofertas h2{
+  color: black;
+}
+
+
+.card_ofertas p{
+  color: rgb(89, 89, 89);
+  font-size: 16px;
+}
+
+.negro{
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1184px) {
   .car_card {
     display: initial;
@@ -344,7 +440,94 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
   }
+
+.cont_ofertas{
+  width: 95%;
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 900px) {
   .cont_productos {
@@ -397,7 +580,68 @@ footer {
   .cont_header nav {
     display: none;
   }
+
+
+.cont_ofertas{
+  grid-template-columns: 1fr;
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 700px) {
   .cont_buscador {
@@ -439,6 +683,53 @@ footer {
     width: 100%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
