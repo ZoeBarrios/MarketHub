@@ -14,6 +14,23 @@ export default function CardPurchase({ purchase, addComment = false }) {
   const date = new Date(purchase.purchaseDate).toLocaleDateString();
   return (
     <li className="card-container purchase-card">
+      <div className="info-purchase">
+        <p>Sale date: {date}</p>
+        <p>
+          <span style={{ display: "block" }}>Total: ${purchase.amount}</span>
+        </p>
+
+        {isLoading ? <Loader /> : <p>Buyer: {data?.userName}</p>}
+        {addComment && (
+          <button
+            onClick={purchase.wasDelivered ? "" : openModal}
+            className={purchase.wasDelivered ? "disabled" : "btn-add-comment"}
+          >
+            {purchase.wasDelivered ? "Review added" : "Add review"}
+          </button>
+        )}
+      </div>
+
       {purchase.publications.map((publication) => (
         <ul key={publication.publicationId + purchase.purchaseDate}>
           <img
@@ -21,21 +38,7 @@ export default function CardPurchase({ purchase, addComment = false }) {
             alt={publication.name}
             className="img-publication"
           />
-          <p>
-            {publication.name}
-            <span style={{ display: "block" }}>{purchase.amount}</span>
-          </p>
-
-          <p>Sale date: {date}</p>
-          {isLoading ? <Loader /> : <p>Buyer: {data?.userName}</p>}
-          {addComment && (
-            <button
-              onClick={purchase.wasDelivered ? "" : openModal}
-              className={purchase.wasDelivered ? "disabled" : "btn-add-comment"}
-            >
-              {purchase.wasDelivered ? "Review added" : "Add review"}
-            </button>
-          )}
+          {publication.name}
 
           {isOpen && (
             <Modal>
