@@ -13,6 +13,10 @@ export default function Categorias() {
     error: categoriesError,
   } = useQuery("categories", () => getCategories());
   const handleCategoryChance = (id) => {
+
+
+
+
     dispatch({ type: PUBLICATION_ACTIONS.SET_ID, payload: id });
     dispatch({
       type: PUBLICATION_ACTIONS.SET_TYPE,
@@ -33,6 +37,7 @@ export default function Categorias() {
                     href="#titu_cate"
                     key={category.categoryId}
                     onClick={() => handleCategoryChance(category.categoryId)}
+                    
                   >
                     {category.name}
                   </a>

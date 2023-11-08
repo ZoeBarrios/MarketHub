@@ -44,9 +44,14 @@ body {
 header {
   /* background-color: #d0f5df6b;*/
   background-color: orangered;
-  background-color: white;
+  background-color: #f6f6f6;
   padding: 10px 0;
 }
+
+header img{
+  width: 100%;
+}
+
 
 .btn_naranja {
   background-color: orangered;
@@ -68,9 +73,19 @@ header {
 }
 
 .logo img {
-  width: 150px;
+ width: 100%;
   border-radius: 1em;
   height: 100px;
+}
+
+
+.cont_header{
+  margin: auto;
+  width: 70%;
+}
+
+header{
+  padding: 0px;
 }
 
 input {
@@ -546,6 +561,22 @@ body {
   .cont_ofertas {
     width: 95%;
   }
+.des{
+
+}
+
+.precio{
+
+}
+
+.precio a{
+
+}
+
+.precio h3{
+  background-color: red;
+}
+
 }
 
 @media (max-width: 900px) {
@@ -594,6 +625,11 @@ body {
   header {
     z-index: 20;
   }
+
+.naranja{
+  color: orangered!important;
+}
+
 
   .cont_categorias {
     display: grid;
@@ -645,7 +681,7 @@ body {
   }
 
   .logo img {
-    width: 70px;
+    
   }
 
   .fondo1 {

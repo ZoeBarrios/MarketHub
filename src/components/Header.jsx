@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import Input from "./Input";
-import Logo from "../imgs/logo.jpeg";
+
+import LOGO from "../imgs/LOGO3.png";
 import { useContext } from "react";
 import PublicationContext from "../context/publicationsContex";
 import { PUBLICATION_ACTIONS } from "../utils/constants";
@@ -27,7 +28,7 @@ export default function Header() {
       <header>
         <div className="cont_header">
           <div className="logo" onClick={handleReturn}>
-            <img src={Logo} alt="" />
+            <img src={LOGO} alt="" />
           </div>
           <nav>
             <Input class="input1"></Input>
