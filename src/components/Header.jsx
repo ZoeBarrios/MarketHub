@@ -1,15 +1,11 @@
 import { Link, useLocation } from "wouter";
 import Input from "./Input";
-
 import LOGO from "../imgs/LOGO3.png";
 import { useContext } from "react";
-import PublicationContext from "../context/publicationsContex";
-import { PUBLICATION_ACTIONS } from "../utils/constants";
 import CarritoContext from "../context/carritoContext";
 import AuthContext from "../context/authContext";
 
 export default function Header() {
-  const { dispatch } = useContext(PublicationContext);
   const { state } = useContext(AuthContext);
   const { carrito } = useContext(CarritoContext);
   let menutras = () => {
@@ -18,11 +14,7 @@ export default function Header() {
   };
   const { handleLogout } = useContext(AuthContext);
   const [location, setLocation] = useLocation();
-  const handleReturn = () => {
-    dispatch({
-      type: PUBLICATION_ACTIONS.RESET,
-    });
-  };
+
   const logout = () => {
     handleLogout();
     setLocation("/");
@@ -32,7 +24,7 @@ export default function Header() {
     <div>
       <header>
         <div className="cont_header">
-          <div className="logo" onClick={handleReturn}>
+          <div className="logo">
             <img src={LOGO} alt="" />
           </div>
           <nav>
