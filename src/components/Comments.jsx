@@ -11,15 +11,32 @@ export default function Comments({ id }) {
   return commentsLoading ? (
     <Loader />
   ) : Comentaries.length > 0 ? (
-    <ul>
-      {Comentaries.map((Comentary) => (
-        <li key={Comentary.commentaryId} className="comentarySection-values">
-          <label htmlFor="">{Comentary.text}</label>
-          <label htmlFor="">{Comentary.raiting}⭐</label>
-        </li>
-      ))}
-    </ul>
+    <div className="product-data-reviews">
+      <ul>
+        {Comentaries.map((Comentary) => (
+          <li key={Comentary.commentaryId} className="comentarySection-values">
+            <label htmlFor="">{Comentary.text}</label>
+            <label htmlFor="">{Comentary.raiting}⭐</label>
+          </li>
+        ))}
+      </ul>
+    </div>
   ) : (
     <h2>There aren't any comments yet</h2>
   );
 }
+
+
+{/* <div className="product-data-reviews">
+                            
+                            <ul className="product-data-reviews-lista">
+                                {
+                                    dataTemp.Comentaries.map(Comentary => (
+                                        <li key={useId} className="">
+                                            <label htmlFor="">{Comentary.reseña}</label>
+                                            <label htmlFor="">{Comentary.puntuación}⭐</label>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div> */}

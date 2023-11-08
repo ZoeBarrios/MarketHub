@@ -1,88 +1,298 @@
-.productPage-hearder {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.productPage-btnIcono {
-  height: 2rem;
-  width: 2rem;
-  border: none;
-  border-radius: 1rem;
-  color: #ffffff;
-  background-color: orangered;
-}
-
-.productPage-product {
+.productPage-wrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0rem 1rem;
-  height: 90%;
-  row-gap: 1rem;
+  
+  padding: 0.5rem;
 }
 
-.productPage-product-1stSection {
-  display: flex;
-  flex-direction: column;
-  /* height: 60%; */
-}
 
-.productPage-product-1stSection > img {
-  border-radius: 1.5rem;
-}
-
-.productPage-product-price {
+.productPage-wrapper-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0rem 1rem;
+  height: 10%;
+  
 }
 
-.productPage-product-price > button {
-  border: none;
-  background-color: orangered;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-}
-
-.productPage-product-description {
-  font-size: 0.8rem;
-  margin-top: 0rem;
-}
-
-.comentarySection {
-  font-size: 0.7rem;
+.imgLogo {
+  width: 4rem;
   height: 4rem;
-  width: 100%;
-  overflow-y: scroll;
 }
 
-.ReviewTitle {
-  display: inline;
-  margin-bottom: -0.1rem;
-  margin-top: 0rem;
-}
-
-.comentarySection > ul {
-  list-style: none;
-}
-
-.comentarySection-values {
-  display: flex;
-  row-gap: 0.2rem;
-  justify-content: space-between;
-  margin-left: -2.5rem;
-}
-
-.whatsappLink {
-  background-color: #25d366;
-  color: white;
-  text-decoration: none;
+.btnFunciones {
+  height: 3rem;
+  width: 3rem;
+  color: #FFFFFF;
+  background-color: #FF4500;
   border: none;
-  border-radius: 1rem;
-  padding: 0.5rem 1rem;
+  border-radius: 50%;
 }
 
-/* display: flex;
-    flex-direction: column;
-    padding: 0rem 1rem; */
+.header-inputGroup {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.header-inputGroup-search {
+  width: 10rem;
+  height: 2rem;
+  border: none;
+  background-color: #989898;
+  border-color: #FF4500;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  color: #FFFFFF;
+}
+
+.productPage-wrapper-product {
+  display: flex;
+  height: 90%;
+  
+}
+
+.productPage-wrapper-product-img {
+  height: 100%;
+  width: 50%;
+  padding: 0.5rem;
+  
+}
+
+.productPage-wrapper-product-img>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2.5rem;
+}
+
+.productPage-wrapper-product-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  padding: 0.5rem;
+  
+  overflow-y: auto;
+}
+
+
+.product-data-nameProduct {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: space-evenly;
+  height: 40%;
+}
+
+.product-data-nameProduct-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-data-nameProduct-description>span {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.product-data-nameProduct-description>p {
+  height: 5rem;
+  overflow-y: auto;
+}
+
+.product-data-reviews {
+  
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.product-data-reviews-label {
+  position: fixed;
+  background-color: #FFFFFF;
+}
+
+.product-data-reviews-lista {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  padding-top: 1.35rem;
+  gap: 0.4rem
+}
+
+.product-data-reviews-lista>li {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.product-data-priceZone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  height: 20%;
+}
+
+.product-data-priceZone-addToCare {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: #FF4500;
+  color: #FFFFFF;
+}
+
+
+.product-data-nameProduct,
+.product-data-reviews,
+.product-data-priceZone {
+  padding: 0rem 1rem;
+}
+
+/*---------------------------------------*/
+@media (max-width: 768px) {
+  .productPage-wrapper {
+      display: flex;
+      flex-direction: column;
+  }
+
+
+  .productPage-wrapper-header {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .imgLogo {
+      height: 3rem;
+      width: 3rem;
+  }
+
+  .btnFunciones {
+      height: 2rem;
+      width: 2rem;
+  }
+
+  .header-inputGroup {
+      display: flex;
+  }
+
+  .header-inputGroup-search {
+      width: 5rem;
+      padding-left: 0.5rem;
+  }
+
+  .productPage-wrapper-product {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .productPage-wrapper-product-img {
+      height: 60%;
+      width: 100%;
+      padding: 0.5rem;
+      
+  }
+  
+  .productPage-wrapper-product-img>img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 1.5rem;
+  }
+
+  .productPage-wrapper-product-data {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      gap: 0.5rem;
+  }
+
+
+  .productPage-wrapper-product-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      padding: 0.5rem;
+      
+      overflow-y: auto;
+  }
+  
+  
+  .product-data-nameProduct {
+      display: flex;
+      flex-direction: column;
+      
+      justify-content: space-evenly;
+      height: 40%;
+  }
+  
+  .product-data-nameProduct-description {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+
+  .product-data-nameProduct-description>span {
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 0.7rem;
+      padding-top: 0.5rem;
+      
+  }
+  
+  .product-data-nameProduct-description>p {
+      margin-top: -0.4rem;
+      height: 2rem;
+      overflow-y: auto;
+      font-size: 0.7rem;
+  }
+
+  .product-data-reviews {
+      height: 100%;
+      overflow-y: scroll;
+      position: relative;
+      
+  }
+  
+  .product-data-reviews-label {
+      position: fixed;
+      background-color: #FFFFFF;
+  }
+  
+  .product-data-reviews-lista {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      list-style: none;
+      padding-top: 1.35rem;
+      gap: 0.4rem;
+  }
+  
+  .product-data-reviews-lista>li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+  }
+
+  .product-data-priceZone {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      font-size: 0.8rem;
+      height: 20%;
+      
+  }
+  
+  .product-data-priceZone-addToCare {
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      background-color: #FF4500;
+      color: #FFFFFF;
+  }
+}
