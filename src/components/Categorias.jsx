@@ -24,12 +24,13 @@ export default function Categorias() {
       {loadingCategories ? (
         <Loader />
       ) : (
-        <div className="fondo_categorias">
+        <div id="fondo_cate" className="fondo_categorias">
           <div className="cont_categorias">
+            <h1>Categorias</h1>
             {categories
               ? categories.map((category) => (
-                  <a
-                    href="#"
+                  <a 
+                    href="#titu_cate"
                     key={category.categoryId}
                     onClick={() => handleCategoryChance(category.categoryId)}
                   >

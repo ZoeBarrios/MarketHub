@@ -38,17 +38,24 @@ function Home() {
 
       <Ofertas></Ofertas>
 
-      <div className="titulo_cate">
-        <h1>Categories</h1>
+      <div id="titu_cate" className="titulo_cate">
+        <h1>You Can Search your product</h1>
       </div>
 
-      <Categorias></Categorias>
-      <div className="fondo2">
-        <div className="titulo_fondo2">
+     
+       {/*<div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
-        </div>
+  </div>*/}
+      <div className="fondo2">
+        <Categorias></Categorias>
         <ListOfPublications />
       </div>
+
+
+
+
+
+      {/*
 
       <div className="titulo_tec">
         <h1>Find your best offer for a technological product</h1>
@@ -77,7 +84,16 @@ function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </div>*/
+
+}
+
+
+
+
+
+
+
 
       <Footer></Footer>
     </div>

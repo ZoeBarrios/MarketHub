@@ -4,6 +4,7 @@ import { fetchPublication } from "../services/publication";
 import Card from "./Card";
 import { useEffect } from "react";
 import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../utils/constants";
+import Categorias from "./Categorias";
 
 export default function ListOfPublications() {
   const { state, dispatch } = useContext(PublicationContext);
@@ -37,6 +38,7 @@ export default function ListOfPublications() {
   return (
     <>
       <div className="cont_productos">
+       
         {publicationsToShow.length === 0 ? (
           <h1>There are no publications to show</h1>
         ) : (
