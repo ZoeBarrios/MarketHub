@@ -119,7 +119,7 @@ export const ProductPage = () => {
               <Comments id={id} />
 
               <section className="productPage-product-price">
-                <label htmlFor={product.name}>{product.price}</label>
+                <label htmlFor={product.name}>${product.price}</label>
                 <a
                   href={`https://wa.me/${seller?.phoneNumber}`}
                   target="_blank"
