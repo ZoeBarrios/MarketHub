@@ -43,7 +43,9 @@ body {
 
 header {
   /* background-color: #d0f5df6b;*/
-  background-color: #efefef9c;
+  background-color: orangered;
+  background-color: white;
+  padding: 10px 0;
 }
 
 .btn_naranja {
@@ -52,6 +54,10 @@ header {
   font-weight: bold;
   border-radius: 2em;
   padding: 5px 20px;
+  background-color: white;
+    color: black !important;
+    display: flex;
+    gap: 3px;
 }
 
 .cont_header nav {
@@ -200,6 +206,8 @@ input {
 
 .titulo_cate {
   /* background-color: red;*/
+  text-align: center;
+  
   margin: 10px auto;
   width: 90%;
   padding: 10px 0;
@@ -417,7 +425,59 @@ body{
 }
 
 
+/*ESTILOS PARA EL CONTENEDOR DE TECNOLOGIAS*/
 
+.cont_tec{
+ /* background-color: red;*/
+  margin: auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.col_tec a{
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 2em;
+  padding: 3px 20px;
+}
+
+
+.col_tec{
+  padding: 20px 30px;
+}
+
+
+#tec1{
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/10/banner-35.jpg);
+
+}
+
+
+#tec2{
+  background-size: cover;
+  background-position: left;
+  background-image: url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/07/banner-36-1.jpg);
+}
+
+.titulo_tec{
+ /* background-color: brown;*/
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  width: 80%;
+color: orangered;
+}
+
+.fondo_tec{
+  margin-bottom: 200px;
+  background-color: white;
+}
 
 
 
@@ -668,6 +728,12 @@ body{
 }
 #oferta3{
   background-repeat: no-repeat;
+}
+
+
+.cont_tec{
+  grid-template-columns: 1fr;
+  width: 90%;
 }
 
 }
