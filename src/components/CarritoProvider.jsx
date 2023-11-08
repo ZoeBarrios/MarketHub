@@ -19,9 +19,12 @@ export default function CarritoProvider({ children }) {
       carrito.filter((item) => item.publicationId !== publication.publicationId)
     );
   };
+  const resetCarrito = () => {
+    setCarrito([]);
+  }
   return (
     <CarritoContext.Provider
-      value={{ carrito, addToCarrito, removeFromCarrito }}
+      value={{ carrito, addToCarrito, removeFromCarrito,resetCarrito}}
     >
       {children}
     </CarritoContext.Provider>

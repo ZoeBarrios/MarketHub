@@ -6,9 +6,11 @@ import { DISCOUNTS_CODES } from "../utils/constants";
 import AuthContext from "../context/authContext";
 import { toast } from "react-toastify";
 import { createPurchase } from "../services/purchases";
+import { useLocation } from "wouter";
 
 export default function Carrito() {
-  const { carrito } = useContext(CarritoContext);
+  const { carrito, resetCarrito } = useContext(CarritoContext);
+  const [location, setLocation] = useLocation();
   const [isDiscountApplied, setIsDiscountApplied] = useState(false);
   const { state } = useContext(AuthContext);
   var total = carrito.reduce(
@@ -39,6 +41,8 @@ export default function Carrito() {
       });
 
       toast("Purchase completed", { autoClose: 1500, type: "success" });
+      resetCarrito();
+      setLocation("/profile");
     } else {
       toast("You must be logged in to buy", { autoClose: 1500, type: "error" });
     }
