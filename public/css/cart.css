@@ -111,6 +111,16 @@ input {
   width: 100%;
 }
 
+.empty-cart{
+ /* background-color: red;*/
+ font-size: 30px;
+  width: 100%;
+  margin-top: 0px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+}
+
 
 
 
