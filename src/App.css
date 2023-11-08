@@ -89,7 +89,7 @@ input {
   padding: 10px;
   height: 100%;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 
 .letra_verde {
@@ -309,7 +309,7 @@ footer {
 .cont_ofertas{
  /* background-color: brown;*/
   margin: auto;
-  width: 90%;
+  width: 85%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -358,6 +358,74 @@ color: rgb(0, 110, 255);
   color: black;
   font-weight: bold;
 }
+
+
+.fondo_ofertas{
+  padding: 100px 0;
+  padding-top: 50px;
+}
+
+
+/*ESTILOS PARA LOS SERVICIOS*/
+
+.fondo_servicios{
+  background-color: white;
+  padding: 20px 0;
+}
+
+.shop{
+  background-color:orangered;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 2em;
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+.cont_servicios{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card_servicio{
+ /* background-color: red;*/
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.img_serv img{
+width: 65px;
+border-radius: 10px;
+
+}
+
+
+body{
+  background-color: #ededed54;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -584,6 +652,22 @@ color: rgb(0, 110, 255);
 
 .cont_ofertas{
   grid-template-columns: 1fr;
+}
+
+
+.cont_servicios{
+  grid-template-columns: 1fr;
+  font-size: 20px;
+}
+
+#oferta1{
+  background-repeat: no-repeat;
+}
+#oferta2{
+  background-repeat: no-repeat;
+}
+#oferta3{
+  background-repeat: no-repeat;
 }
 
 }
