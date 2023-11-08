@@ -50,7 +50,7 @@ export const Register = (props) => {
           value={name}
           name="name"
           id="name"
-          placeholder="Pepito"
+          placeholder="name"
           onChange={handleInputChange}
         />
         <label htmlFor="userName">Username</label>
@@ -59,14 +59,14 @@ export const Register = (props) => {
           value={userName}
           name="userName"
           id="userName"
-          placeholder="PepitoCampeon123"
+          placeholder="username"
           onChange={handleInputChange}
         />
         <label htmlFor="email">Email </label>
         <input
           value={email}
           type="email"
-          placeholder="pepito123@gmail.com"
+          placeholder="email@gmail.com"
           id="email"
           name="email"
           onChange={handleInputChange}
@@ -77,7 +77,7 @@ export const Register = (props) => {
           value={phoneNumber}
           name="phoneNumber"
           id="phoneNumber"
-          placeholder="1234567890"
+          placeholder="phone"
           onChange={handleInputChange}
         />
         <label htmlFor="password">Password </label>
