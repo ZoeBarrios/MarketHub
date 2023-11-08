@@ -40,7 +40,7 @@ export default function ListOfPublications() {
       <div className="cont_productos">
        
         {publicationsToShow.length === 0 ? (
-          <h1>There are no publications to show</h1>
+          <h1 className="producto_no_encontrado"   >There are no publications to show</h1>
         ) : (
           publicationsToShow.map((publication) => (
             <Card key={publication.publicationId} publication={publication} />

@@ -78,6 +78,15 @@ header img{
   height: 100px;
 }
 
+.producto_no_encontrado{
+  position: absolute;
+  left: 50%;
+}
+
+.cont_productos{
+  position: relative;
+}
+
 
 .cont_header{
   margin: auto;
@@ -574,16 +583,13 @@ body {
 }
 
 .precio h3{
-  background-color: red;
+/*  background-color: red;*/
 }
 
 }
 
 @media (max-width: 900px) {
-  .fondo2 {
-    grid-template-columns: 1fr;
-    gap: 1px;
-  }
+ 
 
   .cont_productos {
     grid-template-columns: 1fr 1fr 1fr;
@@ -664,6 +670,19 @@ body {
     grid-template-columns: 1fr;
     width: 90%;
   }
+
+
+  .fondo2 {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.cont_categorias{
+  width: 100%;
+}
+
 }
 
 @media (max-width: 700px) {
