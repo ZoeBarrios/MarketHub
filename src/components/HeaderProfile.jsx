@@ -9,22 +9,16 @@ export default function HeaderProfile({
 
   handleListToShow,
 }) {
-  const { handleLogout } = useContext(AuthContext);
   const [location, setLocation] = useLocation();
-  const logout = () => {
-    handleLogout();
+  const handleBack = () => {
     setLocation("/");
   };
   return (
     <section className="container-header-profile">
-      <Hamburger handleListToShow={handleListToShow} />
+      <i className="fa-solid fa-backward fa-xl back" onClick={handleBack}></i>
 
       <h1>{userName}</h1>
-
-      <i
-        className="fa-solid fa-arrow-right-from-bracket fa-xl log-out"
-        onClick={logout}
-      ></i>
+      <Hamburger handleListToShow={handleListToShow} />
     </section>
   );
 }

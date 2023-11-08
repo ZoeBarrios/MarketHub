@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import Input from "./Input";
 
 import LOGO from "../imgs/LOGO3.png";
@@ -16,11 +16,16 @@ export default function Header() {
     let nav = document.querySelector(".cont_header").querySelector("nav");
     nav.classList.toggle("mostrar");
   };
-
+  const { handleLogout } = useContext(AuthContext);
+  const [location, setLocation] = useLocation();
   const handleReturn = () => {
     dispatch({
       type: PUBLICATION_ACTIONS.RESET,
     });
+  };
+  const logout = () => {
+    handleLogout();
+    setLocation("/");
   };
 
   return (
@@ -33,7 +38,14 @@ export default function Header() {
           <nav>
             <Input class="input1"></Input>
             {state.isAuthenticated ? (
-              <Link to="/profile">Profile</Link>
+              <>
+                <Link to="/profile">Profile</Link>
+                <i
+                  className="fa-solid fa-arrow-right-from-bracket fa-flip-both fa-lg"
+                  style={{ color: "orangered" }}
+                  onClick={logout}
+                ></i>
+              </>
             ) : (
               <Link className="btn_naranja" to="/auth">
                 <i className="fa-solid fa-user"></i>Login

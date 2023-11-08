@@ -85,6 +85,15 @@ h2 {
   color: white;
 }
 
+.back {
+  margin-left: 2em;
+  transition: all 0.3s;
+  &:hover {
+    color: #ff8c00;
+    cursor: pointer;
+  }
+}
+
 .form-new-publication {
   display: flex;
   flex-direction: column;
@@ -209,7 +218,7 @@ label[for="Image"] {
 
 .hamburger {
   position: relative;
-  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .hamburger__icon {
@@ -239,7 +248,7 @@ label[for="Image"] {
   background-color: #fff;
   position: absolute;
   top: 30px;
-  left: 0;
+  right: 0;
   width: 200px;
   border: 1px solid #ccc;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -259,6 +268,7 @@ label[for="Image"] {
 .hamburger__line:hover {
   background-color: #eee;
 }
+
 .container-img-card {
   display: flex;
   width: 100%;

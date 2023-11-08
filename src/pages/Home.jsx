@@ -1,10 +1,6 @@
 import Header from "../components/Header";
 import Categorias from "../components/Categorias";
 import Footer from "../components/Footer";
-import Icono1 from "../imgs/icono1.png";
-import Icono2 from "../imgs/icono2.png";
-import Icono3 from "../imgs/icono3.png";
-import Icono4 from "../imgs/icono4.png";
 
 import ListOfPublications from "../components/ListOfPublications";
 import Ofertas from "../components/Ofertas";
