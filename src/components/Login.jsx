@@ -57,7 +57,7 @@ export const Login = (props) => {
         <input
           value={email}
           type="text"
-          placeholder="pepito123@gmail.com"
+          placeholder="email o username"
           id="email"
           name="email"
           onChange={handleInputChange}

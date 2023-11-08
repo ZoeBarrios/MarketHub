@@ -1,98 +1,84 @@
 .auth {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  min-height: 100vh;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 197, 61) 0%,
+    rgb(255, 94, 7) 90%
+  );
+}
+.auth-form-container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.auth-form-container,
+.auth-form-container h2 {
+  margin: 0;
+}
+
 .register-form,
 .login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-  padding: 24px 31px;
+  width: 80%;
 }
 
-.title {
-  color: rgb(98, 0, 255);
-  color: orangered;
+.login-form {
+  height: 60%;
 }
 
-.login-form,
-.register-form {
-  border: 3px solid orangered;
-  border-width: 1px;
-  border-radius: 1em;
-  background-color: white;
+.register-form label,
+.login-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.auth-form-container {
-  padding: 5rem;
-  border-radius: 10px;
+.register-form input,
+.login-form input {
+  width: 100%;
+
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
 }
 
-.label {
-  text-align: left;
-  padding: 0.25rem 0;
-  color: orangered;
-}
-
-.input {
-  margin: 0.5rem 0;
-  padding: 1rem;
+.register-form button,
+.login-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: orangered;
+  color: #fff;
   border: none;
-  border-radius: 10px;
-  border: 3px solid orangered;
-  border-radius: 11px;
-}
-
-.button {
-  border: 3px solid orangered;
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  color: orangered;
+  font-size: 16px;
 }
 
 .link-btn {
-  border: none;
-  background: none;
-  color: red;
+  display: block;
+  text-align: center;
 
-  width: 100%;
-  text-decoration: underline;
-}
-
-input {
-  padding: 10px 14px;
-  border-radius: 11px;
-}
-
-button {
-  border: 3px solid orangered;
-  background-color: white;
-  padding: 5px 41px;
-  font-weight: bold;
-  margin: 10px;
-  border-radius: 10px;
-  cursor: pointer;
   color: orangered;
-  border-width: 1px;
+  text-decoration: underline;
+  cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
-.auth {
-  width: 90%;
-  margin: 0 auto;
-}
-
-body {
-  box-sizing: border-box;
-  background-color: #ededed;
+@media screen and (min-width: 768px) {
+  .auth-form-container {
+    width: 50%;
+  }
 }
