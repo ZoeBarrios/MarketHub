@@ -31,12 +31,12 @@ export const Register = (props) => {
       return;
     }
     register(formData)
-      .catch((error) => {
-        toast(error.message, { autoClose: 1500, type: "error" });
-      })
       .then(() => {
         resetForm();
         props.onFormSwitch("login");
+      })
+      .catch((error) => {
+        toast(error.message, { autoClose: 1500, type: "error" });
       });
   };
 
