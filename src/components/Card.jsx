@@ -10,6 +10,12 @@ export default function Card({ publication }) {
     publication.stock = 1;
     addToCarrito(publication);
   };
+  var name =
+    publication.name.length > 12
+      ? publication.name.substring(0, 12) + "..."
+      : publication.name;
+
+  var price = Number(publication.price.toString()).toLocaleString("en");
 
   return (
     <div id="prod" className="card" key={publication.publicationId}>
@@ -19,9 +25,9 @@ export default function Card({ publication }) {
         </Link>
       </div>
       <div className="des">
-        <h3>{publication.name}</h3>
+        <h3>{name}</h3>
         <div className="precio">
-          <h3>${publication.price}.00</h3>
+          <h3>${price}</h3>
           {state?.user?.id == publication.userId ? (
             <Link to={`publication/${publication.publicationId}`}>
               <i className="fa-solid fa-edit"></i>
