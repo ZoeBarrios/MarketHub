@@ -682,6 +682,10 @@ body {
 .cont_categorias{
   width: 100%;
 }
+.cat{
+/*  background-color: red;*/
+  width: 90%;
+}
 
 }
 
@@ -724,6 +728,8 @@ body {
     flex-direction: column;
     width: 100%;
   }
+
+
 }
 
 @media (max-width: 350px) {
