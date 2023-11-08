@@ -46,7 +46,9 @@ export default function Carrito() {
   return (
     <div className="cart-container">
       <div className="cart">
-        <h1 className="titulo_carrito"  >My cart <i class="fa-solid fa-cart-shopping"></i></h1>
+        <h1 className="titulo_carrito">
+          My cart <i className="fa-solid fa-cart-shopping"></i>
+        </h1>
         <div className="cart-items">
           {carrito.map((item) => (
             <PublicationCart publication={item} key={item.publicationId} />
