@@ -21,7 +21,11 @@ export default function CardPurchase({ purchase, addComment = false }) {
             alt={publication.name}
             className="img-publication"
           />
-          <p>{publication.name}</p>
+          <p>
+            {publication.name}
+            <span style={{ display: "block" }}>{purchase.amount}</span>
+          </p>
+
           <p>Sale date: {date}</p>
           {isLoading ? <Loader /> : <p>Buyer: {data?.userName}</p>}
           {addComment && (
