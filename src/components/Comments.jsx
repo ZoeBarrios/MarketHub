@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { getCommentsByPublication } from "../services/comment";
 import Loader from "./Loader";
+import Comment from "../components/Comment";
 
 export default function Comments({ id }) {
   const { data: Comentaries, isLoading: commentsLoading } = useQuery(
@@ -12,12 +13,9 @@ export default function Comments({ id }) {
     <Loader />
   ) : Comentaries.length > 0 ? (
     <div className="product-data-reviews">
-      <ul>
+      <ul className="comments-list">
         {Comentaries.map((Comentary) => (
-          <li key={Comentary.commentaryId} className="comentarySection-values">
-            <label htmlFor="">{Comentary.text}</label>
-            <label htmlFor="">{Comentary.raiting}⭐</label>
-          </li>
+          <Comment key={Comentary.commentaryId} Comentary={Comentary} />
         ))}
       </ul>
     </div>
@@ -26,8 +24,8 @@ export default function Comments({ id }) {
   );
 }
 
-
-{/* <div className="product-data-reviews">
+{
+  /* <div className="product-data-reviews">
                             
                             <ul className="product-data-reviews-lista">
                                 {
@@ -39,4 +37,5 @@ export default function Comments({ id }) {
                                     ))
                                 }
                             </ul>
-                        </div> */}
+                        </div> */
+}

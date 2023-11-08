@@ -88,8 +88,7 @@ export const ProductPage = () => {
       ) : (
         <main className="productPage-wrapper">
           <section className="productPage-wrapper-header">
-            <div>
-              <input type="text" className="header-inputGroup-search" placeholder="Search..." />
+            <div className="container-buttons">
               <BotonIcono
                 functionBtn={FUNCTION_BTN.VOLVER}
                 OnClick={handleBack}
@@ -105,18 +104,20 @@ export const ProductPage = () => {
               <img src={product.imageUrl} alt={product.name} />
             </div>
             <aside className="productPage-wrapper-product-data">
-              <h3>
+              <h2>
                 {product.name}{" "}
                 <span>{product.isPaused ? "Paused Publication" : null}</span>
-              </h3>
+              </h2>
               <div className="product-data-nameProduct-description">
-                <span>DESCRIPCION</span>
+                <span>Description</span>
                 <p>{product.description}</p>
               </div>
-              <div className="product-data-reviews">
-                <label htmlFor="reseña" className="product-data-reviews-label">RESEÑAS</label>
-                <Comments id={id} />
-              </div>
+
+              <label htmlFor="reseña" className="product-data-reviews-label">
+                Reviews
+              </label>
+              <Comments id={id} />
+
               <section className="productPage-product-price">
                 <label htmlFor={product.name}>{product.price}</label>
                 <a
@@ -125,12 +126,17 @@ export const ProductPage = () => {
                   rel="noreferrer"
                   className="whatsappLink"
                 >
-                  Contactar por WhatsApp
+                  <i
+                    className="fa-brands fa-whatsapp fa-xl"
+                    style={{ color: "#ffffff" }}
+                  ></i>
                 </a>
-                <button className="product-data-priceZone-addToCare" onClick={handleButton}>
-                  {state?.user?.id === product.userId
-                    ? "Editar"
-                    : "Agregar al carrito"}
+
+                <button
+                  className="product-data-priceZone-addToCare"
+                  onClick={handleButton}
+                >
+                  {state?.user?.id === product.userId ? "Edit" : "Add to cart"}
                 </button>
                 {isOpen ? (
                   <Modal>
@@ -141,7 +147,6 @@ export const ProductPage = () => {
                   </Modal>
                 ) : null}
               </section>
-
             </aside>
           </section>
         </main>
@@ -150,7 +155,8 @@ export const ProductPage = () => {
   );
 };
 
-{/* <main className="productPage-wrapper">
+{
+  /* <main className="productPage-wrapper">
                 <section className="productPage-wrapper-header">
                     <a href="/"><img src="/img/logo.jpeg" alt="" className="imgLogo" /></a>
                     <div className="header-inputGroup">
@@ -196,4 +202,5 @@ export const ProductPage = () => {
                         </div>
                     </aside>
                 </section>
-            </main> */}
+            </main> */
+}
