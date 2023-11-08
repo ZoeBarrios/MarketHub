@@ -29,7 +29,7 @@ function Home() {
           </p>
 
           <a className="shop" href="#prod">
-            Shop Now <i class="fa-solid fa-arrow-right"></i>
+            Shop Now <i className="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -42,18 +42,13 @@ function Home() {
         <h1>You Can Search your product</h1>
       </div>
 
-     
-       {/*<div className="titulo_fondo2">
+      {/*<div className="titulo_fondo2">
           <h1>PRODUCTS</h1>
   </div>*/}
       <div className="fondo2">
         <Categorias></Categorias>
         <ListOfPublications />
       </div>
-
-
-
-
 
       {/*
 
@@ -84,16 +79,7 @@ function Home() {
             </a>
           </div>
         </div>
-      </div>*/
-
-}
-
-
-
-
-
-
-
+      </div>*/}
 
       <Footer></Footer>
     </div>

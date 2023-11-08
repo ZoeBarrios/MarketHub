@@ -10,7 +10,7 @@ function PublicationProvider({ children }) {
     type: PUBLICATIONS.ALL,
     id: null,
     search: "",
-    pageSize: 10,
+    pageSize: 6,
   };
 
   const [state, dispatch] = useReducer(publicationReducer, initialState);

@@ -42,7 +42,7 @@ export default function Carrito() {
 
       toast("Purchase completed", { autoClose: 1500, type: "success" });
       resetCarrito();
-      setLocation("/profile");
+      setLocation("/");
     } else {
       toast("You must be logged in to buy", { autoClose: 1500, type: "error" });
     }
