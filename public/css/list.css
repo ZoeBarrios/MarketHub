@@ -36,6 +36,11 @@ ul {
   display: flex;
 }
 
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @media screen and (min-width: 460px) {
   .card-container {
     flex-direction: row;

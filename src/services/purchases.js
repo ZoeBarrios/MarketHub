@@ -44,3 +44,14 @@ export const createPurchase = async (purchase) => {
 
   return checkResponse(response);
 };
+
+export const updatePurchaseDelivered = async (id) => {
+  const response = await fetch(`${baseUrl}/purchases/${id}`, {
+    method: "PUT",
+    headers: {
+      Authorization: authorizationHeader(),
+    },
+  });
+
+  return checkResponse(response);
+};

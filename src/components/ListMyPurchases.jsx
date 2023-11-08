@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 import { getPurchaseByUser } from "../services/purchases";
 import CardPurchase from "./CardPurchase";
-import { createComment } from "../services/comment";
 import Loader from "./Loader";
 
 export default function ListMyPurchases({ id }) {

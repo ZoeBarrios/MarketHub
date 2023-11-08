@@ -25,8 +25,11 @@ export default function CardPurchase({ purchase, addComment = false }) {
           <p>Sale date: {date}</p>
           {isLoading ? <Loader /> : <p>Buyer: {data?.userName}</p>}
           {addComment && (
-            <button onClick={openModal} className="btn-add-comment">
-              Add comment
+            <button
+              onClick={purchase.wasDelivered ? "" : openModal}
+              className={purchase.wasDelivered ? "disabled" : "btn-add-comment"}
+            >
+              {purchase.wasDelivered ? "Review added" : "Add review"}
             </button>
           )}
 
@@ -39,6 +42,7 @@ export default function CardPurchase({ purchase, addComment = false }) {
                 publicationId={publication.publicationId}
                 userId={purchase.userId}
                 closeModal={closeModal}
+                purchaseId={purchase.purchaseId}
               />
             </Modal>
           )}

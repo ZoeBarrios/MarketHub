@@ -106,7 +106,7 @@ export const ProductPage = () => {
             <aside className="productPage-wrapper-product-data">
               <h2>
                 {product.name}{" "}
-                <span>{product.isPaused ? "Paused Publication" : null}</span>
+                <span>{product.isPaused ? "(Paused Publication)" : null}</span>
               </h2>
               <div className="product-data-nameProduct-description">
                 <span>Description</span>

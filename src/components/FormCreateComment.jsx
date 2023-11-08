@@ -1,11 +1,27 @@
 import { toast } from "react-toastify";
 import { createComment } from "../services/comment";
+import { updatePurchaseDelivered } from "../services/purchases";
+import { useMutation } from "react-query";
+import { useLocation } from "wouter";
 
 export default function FormCreateComment({
   publicationId,
   userId,
   closeModal,
+  purchaseId,
 }) {
+  const [location, setLocation] = useLocation();
+  const { mutate } = useMutation(createComment, {
+    onSuccess: () => {
+      toast.success("Comment created");
+      closeModal();
+      updatePurchaseDelivered(purchaseId);
+      setLocation(`/publication/${publicationId}`);
+    },
+    onError: () => {
+      toast.error("Error creating the comment. Please try again.");
+    },
+  });
   const handleAddComment = (e) => {
     e.preventDefault();
     const text = e.target.text.value;
@@ -21,19 +37,12 @@ export default function FormCreateComment({
       return;
     }
 
-    createComment({
+    mutate({
       text: text,
       rating: Number(rating),
       userId: Number(userId),
       publicationId: Number(publicationId),
-    })
-      .then((data) => {
-        toast.success("Comment created");
-        closeModal();
-      })
-      .catch((error) => {
-        toast.error("Error creating the comment. Please try again.");
-      });
+    });
   };
 
   return (
