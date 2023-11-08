@@ -64,6 +64,7 @@ export default function FormNewPublication({ UserId, closeModal }) {
       <input
         type="number"
         id="Price"
+        step="0.1"
         name="Price"
         onChange={handleInputChange}
       />

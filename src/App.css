@@ -296,7 +296,9 @@ footer {
 
 .buttons-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  grid-column: 1/4;
+
   align-items: center;
   margin-top: 10px;
 }
@@ -466,9 +468,7 @@ body {
   background-color: white;
 }
 
-
-
-.fondo2{
+.fondo2 {
   display: grid;
   margin: auto;
   width: 80%;
@@ -477,46 +477,21 @@ body {
   align-items: center;
 }
 
-.cont_productos{
+.cont_productos {
   grid-template-columns: 1fr 1fr 1fr;
-/*  background-color: red;*/
+  /*  background-color: red;*/
   width: 100%;
 }
 
-.cont_categorias{
+.cont_categorias {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.titulo_cate{
+.titulo_cate {
   margin-bottom: 40px;
   margin-top: 100px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 1184px) {
   .car_card {
@@ -532,17 +507,14 @@ body {
   }
 
   .cont_productos {
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
   }
 
-  .fondo2{
-   /* background-color: red;*/
+  .fondo2 {
+    /* background-color: red;*/
     width: 90%;
   }
-
-
-
 
   .cont_header {
     width: 90%;
@@ -566,9 +538,9 @@ body {
     gap: 10px;
   }
 
-  .cont_categorias{
+  .cont_categorias {
     display: grid;
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .cont_ofertas {
@@ -576,30 +548,11 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 900px) {
-
-.fondo2{
-  grid-template-columns: 1fr;
-  gap: 1px;
-}
+  .fondo2 {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
 
   .cont_productos {
     grid-template-columns: 1fr 1fr 1fr;
@@ -644,7 +597,7 @@ body {
 
   .cont_categorias {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
@@ -676,37 +629,6 @@ body {
     width: 90%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 700px) {
   .cont_buscador {
