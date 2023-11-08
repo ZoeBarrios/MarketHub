@@ -1,15 +1,24 @@
 import Header from "../components/Header";
 import Categorias from "../components/Categorias";
 import Footer from "../components/Footer";
-import ListOfPublications from "../components/ListOfPublications";
+import Icono1 from "../imgs/icono1.png";
+import Icono2 from "../imgs/icono2.png";
+import Icono3 from "../imgs/icono3.png";
+import Icono4 from "../imgs/icono4.png";
 
+import ListOfPublications from "../components/ListOfPublications";
+import Ofertas from "../components/Ofertas";
+import Servicios from "../components/Servicios";
 function Home() {
+
+
+
   return (
     <div>
       <Header></Header>
 
       <div className="fondo1">
-        <div className="cont_fondo1">
+        <div data-aos="fade-down" className="cont_fondo1">
           <h4>
             In <span className="letra_verde">MarketHub</span>
           </h4>
@@ -21,14 +30,41 @@ function Home() {
             We have prepared special discounts for you on electronic <br />
             products. Dont miss these opportunities...
           </p>
+
+          <a className="shop" href="#prod">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
+
+<Servicios></Servicios>
+
+<Ofertas></Ofertas>
+
+
+
+
+
+
+
+
 
       <div className="titulo_cate">
         <h1>Categorys</h1>
       </div>
 
+
+
       <Categorias></Categorias>
+
+
+
+
+
+
+
+
+
+
+
 
       <div className="fondo2">
         <div className="titulo_fondo2">

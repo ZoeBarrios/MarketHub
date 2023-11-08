@@ -12,7 +12,7 @@ export default function Card({ publication }) {
   };
 
   return (
-    <div className="card" key={publication.publicationId}>
+    <div id="prod" className="card" key={publication.publicationId}>
       <div className="cont_imagen">
         <Link to={`publication/${publication.publicationId}`}>
           <img src={publication.imageUrl} alt="" />
