@@ -11,7 +11,7 @@ export default function WishList({ id }) {
   );
 
   return (
-    <div className="list-of-wish">
+    <ul className="list-of-wish">
       <h2>Wish List</h2>
       {loadingFavorites ? (
         <Loader />
@@ -26,6 +26,6 @@ export default function WishList({ id }) {
           />
         ))
       )}
-    </div>
+    </ul>
   );
 }

@@ -10,22 +10,21 @@ export default function ListMyPurchases({ id }) {
   );
 
   return (
-    <div className="list-my-purchases">
+    <ul className="list-my-purchases">
       <h2>My purchases</h2>
       {isLoading ? (
         <Loader />
       ) : data.length < 1 ? (
         <p>You don't have anything here</p>
       ) : (
-        <div>
-          {data.map((purchase) => (
-            <CardPurchase
-              purchase={purchase}
-              key={purchase.publicationId + purchase.purchaseDate}
-            />
-          ))}
-        </div>
+        data.map((purchase) => (
+          <CardPurchase
+            purchase={purchase}
+            key={purchase.publicationId + purchase.purchaseDate}
+            addComment={true}
+          />
+        ))
       )}
-    </div>
+    </ul>
   );
 }

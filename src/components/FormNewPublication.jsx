@@ -85,7 +85,9 @@ export default function FormNewPublication({ UserId }) {
       </select>
       <label htmlFor="Image">Upload an image</label>
       <input type="file" id="Image" name="Image" onChange={handleInputChange} />
-      <button type="submit">Publicar</button>
+      <button type="submit" className="btn-orange">
+        Publicar
+      </button>
     </form>
   );
 }

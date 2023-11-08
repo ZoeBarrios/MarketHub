@@ -1,6 +1,6 @@
 .container-header-profile {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 60px;
@@ -9,11 +9,10 @@
   color: orangered;
 }
 
-.container-header-profile > * {
-  flex: 1;
-  text-align: center;
+.log-out {
+  cursor: pointer;
+  margin-right: 1em;
 }
-
 .wish-list-button {
   width: 30%;
   height: 3em;

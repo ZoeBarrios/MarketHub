@@ -6,7 +6,10 @@ export default function CreatePublication({ id }) {
   const { isOpen, closeModal, openModal } = useModal();
   return (
     <>
-      <button onClick={openModal} className="button-create-publication">
+      <button
+        onClick={openModal}
+        className="button-create-publication btn-orange"
+      >
         {isOpen ? "cancel" : "Create new publication"}
       </button>
       {isOpen && (

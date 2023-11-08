@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import useModal from "../hooks/useModal";
 import FormCreateComment from "./FormCreateComment";
 
-export default function CardPurchase({ purchase }) {
+export default function CardPurchase({ purchase, addComment = false }) {
   const { isOpen, openModal, closeModal } = useModal();
   const { data, isLoading } = useQuery(["user", purchase.userId], () =>
     getUser(purchase.userId)
@@ -13,12 +13,9 @@ export default function CardPurchase({ purchase }) {
 
   const date = new Date(purchase.purchaseDate).toLocaleDateString();
   return (
-    <li className="card-container">
+    <li className="card-container purchase-card">
       {purchase.publications.map((publication) => (
-        <div
-          key={publication.publicationId + purchase.purchaseDate}
-          className="purchase-publication"
-        >
+        <ul key={publication.publicationId + purchase.purchaseDate}>
           <img
             src={publication.imageUrl}
             alt={publication.name}
@@ -27,17 +24,24 @@ export default function CardPurchase({ purchase }) {
           <p>{publication.name}</p>
           <p>Sale date: {date}</p>
           {isLoading ? <Loader /> : <p>Buyer: {data?.userName}</p>}
-          <button onClick={openModal}>Add comment</button>
-          {isOpen ? (
+          {addComment && (
+            <button onClick={openModal} className="btn-add-comment">
+              Add comment
+            </button>
+          )}
+
+          {isOpen && (
             <Modal>
-              <button onClick={closeModal}>X</button>
+              <button onClick={closeModal} className="close-modal-button">
+                X
+              </button>
               <FormCreateComment
                 publicationId={publication.publicationId}
                 userId={purchase.userId}
               />
             </Modal>
-          ) : null}
-        </div>
+          )}
+        </ul>
       ))}
     </li>
   );

@@ -20,9 +20,11 @@ export default function HeaderProfile({
       <Hamburger handleListToShow={handleListToShow} />
 
       <h1>{userName}</h1>
-      <button onClick={logout} className="wish-list-button">
-        Log out
-      </button>
+
+      <i
+        className="fa-solid fa-arrow-right-from-bracket fa-xl log-out"
+        onClick={logout}
+      ></i>
     </section>
   );
 }

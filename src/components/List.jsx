@@ -6,7 +6,7 @@ import "/public/css/list.css";
 
 export default function List({ isLoading, data, error, listType }) {
   return (
-    <ul>
+    <>
       {isLoading ? (
         <Loader />
       ) : data.length < 1 ? (
@@ -23,6 +23,6 @@ export default function List({ isLoading, data, error, listType }) {
           />
         ))
       )}
-    </ul>
+    </>
   );
 }

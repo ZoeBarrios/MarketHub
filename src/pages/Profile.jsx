@@ -43,8 +43,10 @@ function Profile() {
         id={id}
         handleListToShow={handleListToShow}
       />
-      <section className="list-info-section">{listToRender()}</section>
-      <CreatePublication id={id} />
+      <section className="action-section">
+        <section className="list-info-section">{listToRender()}</section>
+        <CreatePublication id={id} />
+      </section>
     </div>
   );
 }

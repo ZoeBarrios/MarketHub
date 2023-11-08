@@ -15,10 +15,10 @@ export default function FormCreateComment({ publicationId, userId }) {
     }).then((data) => toast.success("Comment created"));
   };
   return (
-    <form onSubmit={handleAddComment}>
-      <h1>FORMULARIO</h1>
+    <form onSubmit={handleAddComment} className="form-create-comment">
+      <h2>Add Comment</h2>
       <label htmlFor="text">Comment</label>
-      <input type="text" id="text" />
+      <textarea type="text" id="text" />
       <label htmlFor="rating">Rating</label>
       <input type="number" id="rating" max={5} />
       <button type="submit">Add comment</button>

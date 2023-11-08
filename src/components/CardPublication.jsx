@@ -14,19 +14,22 @@ export default function CardPublication({ publication, id }) {
   };
   return (
     <li key={publication.publicationId} className="card-container">
-      <Link to={`publication/${publication.publicationId}`}>
-        <img
-          src={publication.imageUrl}
-          alt={publication.name}
-          className="img-publication"
-        />
-      </Link>
-      <p>{publication.name}</p>
+      <div className="container-img-card">
+        <Link to={`publication/${publication.publicationId}`}>
+          <img
+            src={publication.imageUrl}
+            alt={publication.name}
+            className="img-publication"
+          />
+        </Link>
+        <p>{publication.name}</p>
+      </div>
+
       <p>Precio: {publication.price}</p>
       {id ? (
         <button
           onClick={() => handleRemove(publication.publicationId)}
-          className="remove-button"
+          className="remove-button btn-orange"
         >
           Remove
         </button>

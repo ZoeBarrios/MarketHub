@@ -11,13 +11,13 @@ export default function ListsProfile({ id }) {
   );
 
   return (
-    <div className="list-publications">
+    <ul className="list-publications">
       <h2>My Publications</h2>
       <List
         isLoading={loadingPublication}
         data={publications}
         listType={LIST.PUBLICATIONS}
       />
-    </div>
+    </ul>
   );
 }
