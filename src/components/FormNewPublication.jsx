@@ -1,11 +1,12 @@
-import { useQuery } from "react-query";
-import { getCategories } from "../services/category";
 import { useRef, useState } from "react";
-import { createPublication } from "../services/publication";
-import { toast } from "react-toastify";
+import { useQuery } from "react-query";
 import Loader from "./Loader";
+import { createPublication } from "../services/publication";
+import { getCategories } from "../services/category";
+import { toast } from "react-toastify";
+import { validateForm } from "../utils/utilsFunctions";
 
-export default function FormNewPublication({ UserId }) {
+export default function FormNewPublication({ UserId, closeModal }) {
   const { data, isLoading } = useQuery(["categories"], () => getCategories());
 
   const selectOption = useRef(null);
@@ -14,11 +15,20 @@ export default function FormNewPublication({ UserId }) {
     Description: "",
     Price: "",
     UserId: UserId,
-    Stock: "",
+    Stock: 1,
     Image: null,
   });
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      for (const key in validationErrors) {
+        toast.error(validationErrors[key]);
+      }
+      return;
+    }
 
     const formDataToSend = new FormData();
 
@@ -30,8 +40,10 @@ export default function FormNewPublication({ UserId }) {
 
     createPublication(formDataToSend).then((data) => {
       toast.success("Publication created successfully");
+      closeModal();
     });
   };
+
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;
     const updatedValue = type === "file" ? files[0] : value;
@@ -41,6 +53,7 @@ export default function FormNewPublication({ UserId }) {
       [name]: updatedValue,
     });
   };
+
   return (
     <form className="form-new-publication" onSubmit={handleSubmit}>
       <h2>Create a new publication on MarketHub</h2>
@@ -54,6 +67,7 @@ export default function FormNewPublication({ UserId }) {
         name="Price"
         onChange={handleInputChange}
       />
+
       <input type="hidden" id="userId" name="UserId" value={UserId} />
       <label htmlFor="Stock">Stock</label>
       <input
@@ -71,6 +85,7 @@ export default function FormNewPublication({ UserId }) {
         name="Description"
         onChange={handleInputChange}
       />
+
       <label htmlFor="Category">Category</label>
       <select id="Category" name="Category" ref={selectOption}>
         {isLoading ? (
@@ -83,10 +98,12 @@ export default function FormNewPublication({ UserId }) {
           ))
         )}
       </select>
+
       <label htmlFor="Image">Upload an image</label>
       <input type="file" id="Image" name="Image" onChange={handleInputChange} />
+
       <button type="submit" className="btn-orange">
-        Publicar
+        Create
       </button>
     </form>
   );

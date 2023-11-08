@@ -38,6 +38,7 @@ export default function CardPurchase({ purchase, addComment = false }) {
               <FormCreateComment
                 publicationId={publication.publicationId}
                 userId={purchase.userId}
+                closeModal={closeModal}
               />
             </Modal>
           )}

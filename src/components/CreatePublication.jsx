@@ -17,7 +17,6 @@ export default function CreatePublication({ id }) {
           <button onClick={closeModal} className="close-modal-button">
             X
           </button>
-
           <FormNewPublication UserId={id} closeModal={closeModal} />
         </Modal>
       )}
