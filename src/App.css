@@ -48,7 +48,7 @@ header {
   padding: 10px 0;
 }
 
-header img{
+header img {
   width: 100%;
 }
 
@@ -73,27 +73,27 @@ header img{
 }
 
 .logo img {
- width: 100%;
+  width: 100%;
   border-radius: 1em;
   height: 100px;
 }
 
-.producto_no_encontrado{
+.producto_no_encontrado {
   position: absolute;
   left: 50%;
 }
 
-.cont_productos{
+.cont_productos {
   position: relative;
 }
 
 
-.cont_header{
+.cont_header {
   margin: auto;
   width: 70%;
 }
 
-header{
+header {
   padding: 0px;
 }
 
@@ -140,6 +140,7 @@ input {
   font-size: 20px;
   color: grey;
 }
+
 .cont_fondo1 h4 {
   line-height: 1px;
 }
@@ -169,19 +170,14 @@ input {
 }
 
 .card {
-  border-radius: 15px;
-  padding: 0px 10px;
-
-  background-color: #8080803d;
+  padding: 1rem;
+  border-radius: 1.5rem;
   background-color: #bc787824;
-  /* border-style: solid; */
-  border-radius: 15px;
-  padding: 3px 10px;
 }
 
-.cont_imagen {
-  background-color: white;
-  border-radius: 10px;
+.cont_imagen>img {
+  border-radius: 1rem;
+  object-fit: fill;
 }
 
 .precio a {
@@ -189,8 +185,9 @@ input {
   text-decoration: none;
   background-color: orangered;
   font-weight: bold;
-  border-radius: 10px;
-  padding: 4px 4px;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+ 
 }
 
 .card .cont_imagen img {
@@ -222,7 +219,6 @@ input {
 .cont_categorias a {
   text-decoration: none;
   color: black;
-
   font-weight: bold;
   border-radius: 2em;
   padding: 5px;
@@ -231,7 +227,6 @@ input {
 .titulo_cate {
   /* background-color: red;*/
   text-align: center;
-
   margin: 10px auto;
   width: 90%;
   padding: 10px 0;
@@ -300,6 +295,7 @@ footer {
   display: flex;
   gap: 20px;
 }
+
 .metodo {
   text-align: center;
 }
@@ -315,7 +311,7 @@ footer {
 .card .cont_imagen img {
   width: 100%;
   height: 188px;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .buttons-container {
@@ -570,26 +566,21 @@ body {
   .cont_ofertas {
     width: 95%;
   }
-.des{
 
-}
+  .des {}
 
-.precio{
+  .precio {}
 
-}
+  .precio a {}
 
-.precio a{
-
-}
-
-.precio h3{
-/*  background-color: red;*/
-}
+  .precio h3 {
+    /*  background-color: red;*/
+  }
 
 }
 
 @media (max-width: 900px) {
- 
+
 
   .cont_productos {
     grid-template-columns: 1fr 1fr 1fr;
@@ -632,9 +623,9 @@ body {
     z-index: 20;
   }
 
-.naranja{
-  color: orangered!important;
-}
+  .naranja {
+    color: orangered !important;
+  }
 
 
   .cont_categorias {
@@ -659,9 +650,11 @@ body {
   #oferta1 {
     background-repeat: no-repeat;
   }
+
   #oferta2 {
     background-repeat: no-repeat;
   }
+
   #oferta3 {
     background-repeat: no-repeat;
   }
@@ -679,9 +672,9 @@ body {
     flex-direction: column;
   }
 
-.cont_categorias{
-  width: 100%;
-}
+  .cont_categorias {
+    width: 100%;
+  }
 
 }
 
@@ -699,9 +692,7 @@ body {
     left: 10px;
   }
 
-  .logo img {
-    
-  }
+  .logo img {}
 
   .fondo1 {
     background-position: top;

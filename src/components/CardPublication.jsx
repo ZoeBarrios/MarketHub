@@ -25,7 +25,7 @@ export default function CardPublication({ publication, id }) {
         <p>{publication.name}</p>
       </div>
 
-      <p>Precio: {publication.price}</p>
+      <p>Precio: ${publication.price}</p>
       {id ? (
         <button
           onClick={() => handleRemove(publication.publicationId)}

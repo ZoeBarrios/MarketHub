@@ -5,10 +5,9 @@ export default function PublicationCart({ publication }) {
   const { removeFromCarrito } = useContext(CarritoContext);
   return (
     <div className="cart-item" key={publication.publicationId}>
-<div className="img_carrito">
-      <img src={publication.imageUrl} alt={publication.name} />
-
-</div>
+      <div className="img_carrito">
+        <img src={publication.imageUrl} alt={publication.name} />
+      </div>
 
       <div className="cart-item-info">
         <h3>{publication.name}</h3>
