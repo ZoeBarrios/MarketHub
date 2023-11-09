@@ -13,6 +13,18 @@ export default function Input() {
         payload: PUBLICATIONS.BY_NAME,
       });
       dispatch({ type: PUBLICATION_ACTIONS.SET_SEARCH, payload: search });
+
+     
+
+
+
+
+
+      
+      const tituCateElement = document.getElementById("titu_cate");
+      if (tituCateElement) {
+        tituCateElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
