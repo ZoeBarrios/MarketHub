@@ -13,6 +13,7 @@
 
 .cart {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   background-color: white;
@@ -23,6 +24,18 @@
   padding: 10px 0px;
 }
 
+.backCarrito{
+  position: absolute;
+  margin-left: 2em;
+  color: orangered;
+  right: 95%;
+  bottom: 95%;
+  transition: all 0.3s;
+}
+.backCarrito:hover {
+  color: #ff8c00;
+  cursor: pointer;
+}
 .cart-items {
   display: flex;
   flex-direction: column;

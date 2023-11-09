@@ -30,6 +30,9 @@ export default function Carrito() {
       }
     }
   };
+  const handleBack = () => {
+    setLocation("/");
+  };
 
   const handleBuy = () => {
     if (state.isAuthenticated) {
@@ -50,6 +53,7 @@ export default function Carrito() {
   return (
     <div className="cart-container">
       <div className="cart">
+        <i className="fa-solid fa-backward fa-xl backCarrito" onClick={handleBack}></i>
         <h1 className="titulo_carrito">
           My cart <i className="fa-solid fa-cart-shopping"></i>
         </h1>

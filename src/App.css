@@ -187,7 +187,7 @@ input {
   font-weight: bold;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
- 
+
 }
 
 .card .cont_imagen img {
@@ -707,9 +707,11 @@ body {
     justify-content: space-between;
   }
 
-  .precio a {
+  /* .precio a {
     text-align: center;
-  }
+  } */
+
+
 
   .cont_footer {
     flex-direction: column;
@@ -727,5 +729,57 @@ body {
   .cont_fondo1 h1 {
     line-height: 80px;
     font-size: 40px;
+  }
+
+  
+}
+
+@media (min-width:1184px) and (max-width:1450px) {
+  .precio h3{
+    font-size: 0.9rem;
+  }
+  .precio a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+@media (min-width:901px) and (max-width:950px){
+  .precio{
+    display: flex;
+  }
+  .precio h3{
+    font-size: 0.9rem;
+  }
+  .precio a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+@media (min-width:350px) and (max-width:450px) {
+  .precio h3{
+    font-size: 0.9rem;
+  }
+  .precio a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
   }
 }
