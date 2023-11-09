@@ -37,6 +37,8 @@ export default function Carrito() {
   console.log(total + Number(argTax));
   const handleBuy = () => {
     if (state.isAuthenticated) {
+      console.log(total + Number(argTax));
+
       createPurchase({
         amount: total + Number(argTax),
         userId: state.user.id,
@@ -75,8 +77,8 @@ export default function Carrito() {
         ) : (
           <>
             <div className="cart-total">
-              <p>Argentinian tax: ${argTax}</p>
-              <p>Subtotal: ${total}</p>
+              <p>Argentinian tax: ${parseFloat(argTax).toLocaleString()}</p>
+              <p>Subtotal: ${Number(total).toLocaleString()}</p>
               <p style={{ fontWeight: "bold" }}>
                 Total: ${(total + Number(argTax)).toLocaleString()}
               </p>

@@ -14,7 +14,6 @@ export default function PublicationCart({ publication }) {
         <p>Price: {Number(publication.price).toLocaleString()}</p>
         <p>Quantity: {publication.stock}</p>
 
-        <p>Total: {publication.price * publication.stock}</p>
         <button onClick={() => removeFromCarrito(publication)}>
           Remove from cart
         </button>
