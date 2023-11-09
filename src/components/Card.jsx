@@ -15,7 +15,7 @@ export default function Card({ publication }) {
       ? publication.name.substring(0, 12) + "..."
       : publication.name;
 
-  var price = Number(publication.price.toString()).toLocaleString("en");
+  var price = Number(publication.price.toString()).toLocaleString();
 
   return (
     <div id="prod" className="card" key={publication.publicationId}>

@@ -94,17 +94,18 @@ export default function FormNewPublication({ UserId, closeModal }) {
       />
 
       <label htmlFor="Category">Category</label>
-      <select id="Category" name="Category" ref={selectOption}>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          data?.map((category) => (
+
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <select id="Category" name="Category" ref={selectOption}>
+          {data?.map((category) => (
             <option key={category.categoryId} value={category.categoryId}>
               {category.name}
             </option>
-          ))
-        )}
-      </select>
+          ))}
+        </select>
+      )}
 
       <label htmlFor="Image">Upload an image</label>
       <input type="file" id="Image" name="Image" onChange={handleInputChange} />

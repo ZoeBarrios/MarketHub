@@ -47,7 +47,7 @@ export default function FormUpdatePublication({ publication }) {
     setLocation("/");
   };
   return (
-    <form className="form-updated" onSubmit={handleSubmit}>
+    <form className="form-updated" onSubmit={handleSubmit} name="form-updated">
       <h2>Update Publication</h2>
       <label htmlFor="name">Name</label>
       <input

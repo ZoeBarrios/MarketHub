@@ -119,7 +119,7 @@ export const ProductPage = () => {
               <Comments id={id} />
 
               <section className="productPage-product-price">
-                <p>${product.price}</p>
+                <p>${Number(product.price).toLocaleString()}</p>
                 <a
                   href={`https://wa.me/${seller?.phoneNumber}`}
                   target="_blank"

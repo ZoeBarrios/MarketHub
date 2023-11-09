@@ -68,7 +68,11 @@ export const Login = (props) => {
       ) : (
         <>
           <h2 className="title">Log in</h2>
-          <form className="login-form" onSubmit={handleSubmit}>
+          <form
+            className="login-form"
+            onSubmit={handleSubmit}
+            name="login-form"
+          >
             <label id="email-id" htmlFor="email">
               Email or Username{" "}
             </label>
