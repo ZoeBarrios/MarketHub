@@ -58,7 +58,13 @@ export default function FormNewPublication({ UserId, closeModal }) {
     <form className="form-new-publication" onSubmit={handleSubmit}>
       <h2>Create a new publication on MarketHub</h2>
       <label htmlFor="Name">Name</label>
-      <input type="text" id="Name" name="Name" onChange={handleInputChange} />
+      <input
+        type="text"
+        id="Name"
+        name="Name"
+        onChange={handleInputChange}
+        autoComplete="off"
+      />
 
       <label htmlFor="Price">Price</label>
       <input

@@ -67,14 +67,18 @@ export default function Carrito() {
             <div className="cart-total">
               <p>Argentinian tax: {argTax}</p>
               <p>Subtotal: {total}</p>
-              <h3>Total: {total + argTax}</h3>
+              <p style={{ fontWeight: "bold" }}>Total: {total + argTax}</p>
             </div>
             <div className="cart-buttons">
               <div className="input-discount">
-                <label>
+                <label htmlFor="discount">
                   <h3>Discount code</h3>
                 </label>
-                <input onKeyDown={handleKeyDown} readOnly={isDiscountApplied} />
+                <input
+                  onKeyDown={handleKeyDown}
+                  readOnly={isDiscountApplied}
+                  name="discount"
+                />
               </div>
               <button onClick={handleBuy}>Buy now</button>
             </div>
