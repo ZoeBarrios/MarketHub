@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CarritoContext from "../context/carritoContext";
+import CarritoContext from "../../context/carritoContext";
 import { toast } from "react-toastify";
 export default function CarritoProvider({ children }) {
   const [carrito, setCarrito] = useState([]);

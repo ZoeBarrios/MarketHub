@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
-import { getCommentsByPublication } from "../services/comment";
-import Loader from "./Loader";
-import Comment from "../components/Comment";
+import { getCommentsByPublication } from "../../services/comment";
+import Loader from "../Loader";
+import Comment from "./Comment";
 
 export default function Comments({ id }) {
   const { data: Comentaries, isLoading: commentsLoading } = useQuery(

@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
-import useForm from "../hooks/useForm";
-import { login } from "../services/auth";
-import AuthContext from "../context/authContext";
-import { isEmailOrUsername } from "../services/users";
+import useForm from "../../hooks/useForm";
+import { login } from "../../services/auth";
+import AuthContext from "../../context/authContext";
+import { isEmailOrUsername } from "../../services/users";
 import { useLocation } from "wouter";
 import { toast } from "react-toastify";
 import { useMutation } from "react-query";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 export const Login = (props) => {
   const { handleLogin } = useContext(AuthContext);

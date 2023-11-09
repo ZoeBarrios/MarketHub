@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import "/public/css/headerProfile.css";
-import AuthContext from "../context/authContext";
+import AuthContext from "../../context/authContext";
 import { useLocation } from "wouter";
-import Hamburger from "./Hamburger";
+import Hamburger from "../Hamburger";
 
 export default function HeaderProfile({
   userName,

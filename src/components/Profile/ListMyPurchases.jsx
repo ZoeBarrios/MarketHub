@@ -1,14 +1,12 @@
 import { useQuery } from "react-query";
-import { getPurchaseByUser } from "../services/purchases";
+import { getPurchaseByUser } from "../../services/purchases";
 import CardPurchase from "./CardPurchase";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 export default function ListMyPurchases({ id }) {
   const { isLoading, data } = useQuery(["purchaseUser", id], () =>
     getPurchaseByUser(Number(id))
   );
-
-  console.log(data);
 
   return (
     <ul className="list-my-purchases">

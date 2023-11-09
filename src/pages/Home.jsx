@@ -1,10 +1,10 @@
-import Header from "../components/Header";
-import Categorias from "../components/Categorias";
-import Footer from "../components/Footer";
+import Header from "../components/Home/Header";
+import Categorias from "../components/Home/Categorias";
+import Footer from "../components/Home/Footer";
 
-import ListOfPublications from "../components/ListOfPublications";
-import Ofertas from "../components/Ofertas";
-import Servicios from "../components/Servicios";
+import ListOfPublications from "../components/Home/ListOfPublications";
+import Ofertas from "../components/Home/Ofertas";
+import Servicios from "../components/Home/Servicios";
 function Home() {
   return (
     <div>

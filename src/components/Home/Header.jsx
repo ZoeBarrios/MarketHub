@@ -1,9 +1,9 @@
 import { Link, useLocation } from "wouter";
-import Input from "./Input";
-import LOGO from "../imgs/LOGO3.png";
+import Input from "../Input";
+import LOGO from "/public/img/LOGO3.png";
 import { useContext } from "react";
-import CarritoContext from "../context/carritoContext";
-import AuthContext from "../context/authContext";
+import CarritoContext from "../../context/carritoContext";
+import AuthContext from "../../context/authContext";
 
 export default function Header() {
   const { state } = useContext(AuthContext);

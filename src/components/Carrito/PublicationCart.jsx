@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CarritoContext from "../context/carritoContext";
+import CarritoContext from "../../context/carritoContext";
 
 export default function PublicationCart({ publication }) {
   const { removeFromCarrito } = useContext(CarritoContext);

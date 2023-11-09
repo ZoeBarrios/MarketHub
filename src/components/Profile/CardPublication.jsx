@@ -1,7 +1,7 @@
 import { useMutation } from "react-query";
-import { deleteFavorite } from "../services/favorites";
+import { deleteFavorite } from "../../services/favorites";
 import { Link } from "wouter";
-import { queryClient } from "../App";
+import { queryClient } from "../../App";
 
 export default function CardPublication({ publication, id }) {
   const { mutate } = useMutation((pi) => deleteFavorite(id, pi), {

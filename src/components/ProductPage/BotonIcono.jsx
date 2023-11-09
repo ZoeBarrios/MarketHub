@@ -1,4 +1,4 @@
-import { FUNCTION_BTN } from "../utils/constants";
+import { FUNCTION_BTN } from "../../utils/constants";
 
 export const BotonIcono = ({ functionBtn, OnClick }) => {
   return (

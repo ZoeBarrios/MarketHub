@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { useQuery } from "react-query";
-import Loader from "./Loader";
-import { createPublication } from "../services/publication";
-import { getCategories } from "../services/category";
+import Loader from "../Loader";
+import { createPublication } from "../../services/publication";
+import { getCategories } from "../../services/category";
 import { toast } from "react-toastify";
-import { validateForm } from "../utils/utilsFunctions";
+import { validateForm } from "../../utils/utilsFunctions";
 
 export default function FormNewPublication({ UserId, closeModal }) {
   const { data, isLoading } = useQuery(["categories"], () => getCategories());

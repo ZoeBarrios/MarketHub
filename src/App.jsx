@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
-import AuthProvider from "./components/AuthProvider";
+import AuthProvider from "./components/Providers/AuthProvider";
 import Routes from "./components/Routes";
-import PublicationProvider from "./components/PublicationProvider";
-import CarritoProvider from "./components/CarritoProvider";
+import PublicationProvider from "./components/Providers/PublicationProvider";
+import CarritoProvider from "./components/Providers/CarritoProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

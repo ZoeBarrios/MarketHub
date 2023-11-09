@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
-import { getCategories } from "../services/category";
+import { getCategories } from "../../services/category";
 import { useContext } from "react";
-import PublicationContext from "../context/publicationsContex";
-import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../utils/constants";
-import Loader from "./Loader";
+import PublicationContext from "../../context/publicationsContex";
+import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../../utils/constants";
+import Loader from "../Loader";
 
 export default function Categorias() {
   const { dispatch } = useContext(PublicationContext);
@@ -27,7 +27,7 @@ export default function Categorias() {
     });
   };
   return (
-    <div className="cat" >
+    <div className="cat">
       {loadingCategories ? (
         <Loader />
       ) : (

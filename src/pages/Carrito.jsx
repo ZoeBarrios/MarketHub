@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import CarritoContext from "../context/carritoContext";
 import "/public/css/cart.css";
-import PublicationCart from "../components/PublicationCart";
+import PublicationCart from "../components/Carrito/PublicationCart";
 import { DISCOUNTS_CODES } from "../utils/constants";
 import AuthContext from "../context/authContext";
 import { toast } from "react-toastify";
@@ -34,11 +34,9 @@ export default function Carrito() {
   const handleBack = () => {
     setLocation("/");
   };
-  console.log(total + Number(argTax));
+
   const handleBuy = () => {
     if (state.isAuthenticated) {
-      console.log(total + Number(argTax));
-
       createPurchase({
         amount: total + Number(argTax),
         userId: state.user.id,

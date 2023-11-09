@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-import { createComment } from "../services/comment";
-import { updatePurchaseDelivered } from "../services/purchases";
+import { createComment } from "../../services/comment";
+import { updatePurchaseDelivered } from "../../services/purchases";
 import { useMutation } from "react-query";
 import { useLocation } from "wouter";
 

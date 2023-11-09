@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { getUser } from "../services/users";
-import Loader from "./Loader";
-import Modal from "./Modal";
-import useModal from "../hooks/useModal";
+import { getUser } from "../../services/users";
+import Loader from "../Loader";
+import Modal from "../Modal";
+import useModal from "../../hooks/useModal";
 import FormCreateComment from "./FormCreateComment";
 
 export default function CardPurchase({ purchase, addComment = false }) {

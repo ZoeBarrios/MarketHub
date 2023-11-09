@@ -1,5 +1,5 @@
-import AuthContext from "../context/authContext";
-import { AUTH } from "../utils/constants";
+import AuthContext from "../../context/authContext";
+import { AUTH } from "../../utils/constants";
 import { useReducer } from "react";
 
 const tokenStorage = localStorage.getItem("token");

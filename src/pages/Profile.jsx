@@ -1,14 +1,12 @@
 import { useContext, useState } from "react";
 import AuthContext from "../context/authContext";
 import "/public/css/profile.css";
-import ListsProfile from "../components/ListMyPublications";
-
-import HeaderProfile from "../components/HeaderProfile";
-import CreatePublication from "../components/CreatePublication";
-import WishList from "../components/WishList";
-import ListMyPublications from "../components/ListMyPublications";
-import ListPurchases from "../components/ListPurchases";
-import ListMyPurchases from "../components/ListMyPurchases";
+import HeaderProfile from "../components/Profile/HeaderProfile";
+import CreatePublication from "../components/Profile/CreatePublication";
+import WishList from "../components/Profile/WishList";
+import ListMyPublications from "../components/Profile/ListMyPublications";
+import ListPurchases from "../components/Profile/ListPurchases";
+import ListMyPurchases from "../components/Profile/ListMyPurchases";
 import { LIST_TO_SHOW } from "../utils/constants";
 
 function Profile() {

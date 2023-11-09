@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { getFavoritesByUser } from "../services/favorites";
+import { getFavoritesByUser } from "../../services/favorites";
 
 import CardPublication from "./CardPublication";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 export default function WishList({ id }) {
   const { isLoading: loadingFavorites, data: favorites } = useQuery(

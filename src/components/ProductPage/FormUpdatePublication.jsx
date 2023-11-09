@@ -1,8 +1,11 @@
 import { useMutation } from "react-query";
 import "/public/css/formUpdatePublications.css";
-import { deletePublication, updatePublication } from "../services/publication";
+import {
+  deletePublication,
+  updatePublication,
+} from "../../services/publication";
 import { toast } from "react-toastify";
-import { queryClient } from "../App";
+import { queryClient } from "../../App";
 import { useLocation } from "wouter";
 
 function verification(formData) {

@@ -1,11 +1,11 @@
-import { BotonIcono } from "../components/BotonIcono";
+import { BotonIcono } from "../components/ProductPage/BotonIcono";
 import { FUNCTION_BTN } from "../utils/constants";
 import "../../public/css/ProductPage.css";
 import { useParams } from "wouter";
 import { useQuery } from "react-query";
 import { getPublication } from "../services/publication";
 import Loader from "../components/Loader";
-import Comments from "../components/Comments";
+import Comments from "../components/ProductPage/Comments";
 import { createFavorite } from "../services/favorites";
 import { useContext, useState } from "react";
 import AuthContext from "../context/authContext";
@@ -13,7 +13,7 @@ import CarritoContext from "../context/carritoContext";
 import { getUser } from "../services/users";
 import { toast } from "react-toastify";
 import Modal from "../components/Modal";
-import FormUpdatePublication from "../components/FormUpdatePublication";
+import FormUpdatePublication from "../components/ProductPage/FormUpdatePublication";
 import useModal from "../hooks/useModal";
 
 export const ProductPage = () => {

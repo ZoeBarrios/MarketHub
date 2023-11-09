@@ -1,7 +1,7 @@
 import { useReducer } from "react";
-import PublicationContext from "../context/publicationsContex";
-import { PUBLICATIONS } from "../utils/constants";
-import { publicationReducer } from "../utils/reducerFunctions";
+import PublicationContext from "../../context/publicationsContex";
+import { PUBLICATIONS } from "../../utils/constants";
+import { publicationReducer } from "../../utils/reducerFunctions";
 
 function PublicationProvider({ children }) {
   const initialState = {

@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import PublicationContext from "../context/publicationsContex";
-import { fetchPublication } from "../services/publication";
-import Card from "./Card";
+import PublicationContext from "../../context/publicationsContex";
+import { fetchPublication } from "../../services/publication";
+import Card from "../Card";
 import { useEffect } from "react";
-import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../utils/constants";
+import { PUBLICATIONS, PUBLICATION_ACTIONS } from "../../utils/constants";
 import Categorias from "./Categorias";
 
 export default function ListOfPublications() {
@@ -38,9 +38,10 @@ export default function ListOfPublications() {
   return (
     <>
       <div className="cont_productos">
-       
         {publicationsToShow.length === 0 ? (
-          <h1 className="producto_no_encontrado"   >There are no publications to show</h1>
+          <h1 className="producto_no_encontrado">
+            There are no publications to show
+          </h1>
         ) : (
           publicationsToShow.map((publication) => (
             <Card key={publication.publicationId} publication={publication} />

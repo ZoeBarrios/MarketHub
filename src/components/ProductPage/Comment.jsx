@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { getUser } from "../services/users";
+import { getUser } from "../../services/users";
 
 export default function Comment({ Comentary }) {
   const { data } = useQuery(["Comentaries", Comentary.userId], () =>

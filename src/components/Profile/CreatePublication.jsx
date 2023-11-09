@@ -1,6 +1,6 @@
 import FormNewPublication from "./FormNewPublication";
-import useModal from "../hooks/useModal";
-import Modal from "./Modal";
+import useModal from "../../hooks/useModal";
+import Modal from "../Modal";
 
 export default function CreatePublication({ id }) {
   const { isOpen, closeModal, openModal } = useModal();

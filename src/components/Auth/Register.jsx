@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-import useForm from "../hooks/useForm";
-import { register } from "../services/auth";
+import useForm from "../../hooks/useForm";
+import { register } from "../../services/auth";
 
 export const Register = (props) => {
   const { formData, handleInputChange, resetForm } = useForm({

@@ -1,6 +1,6 @@
 import { LIST } from "../utils/constants";
-import CardPublication from "./CardPublication";
-import CardPurchase from "./CardPurchase";
+import CardPublication from "./Profile/CardPublication";
+import CardPurchase from "./Profile/CardPurchase";
 import Loader from "./Loader";
 import "/public/css/list.css";
 

@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
-import { getPurchasesBySeller } from "../services/purchases";
-import List from "./List";
-import { LIST } from "../utils/constants";
+import { getPurchasesBySeller } from "../../services/purchases";
+import List from "../List";
+import { LIST } from "../../utils/constants";
 
 export default function ListPurchases({ id }) {
   const { isLoading: loadingPurchases, data: purchases } = useQuery(
