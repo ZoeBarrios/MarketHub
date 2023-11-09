@@ -42,10 +42,6 @@ export const ProductPage = () => {
       return;
     } else {
       addToCarrito(product);
-      toast("Product added to cart", {
-        autoClose: 1500,
-        type: "success",
-      });
     }
   };
 
@@ -64,21 +60,23 @@ export const ProductPage = () => {
       });
       return;
     }
-    try {
-      const res = await createFavorite({
-        publicationId: Number(id),
-        userId: state.user.id,
+
+    const res = await createFavorite({
+      publicationId: Number(id),
+      userId: state.user.id,
+    })
+      .then((res) => {
+        return toast("Favorite added successfully", {
+          autoClose: 1500,
+          type: "success",
+        });
+      })
+      .catch((err) => {
+        return toast("You already have this product as a favorite", {
+          autoClose: 1500,
+          type: "warning",
+        });
       });
-      toast("Favorite added successfully", {
-        autoClose: 1500,
-        type: "success",
-      });
-    } catch (err) {
-      toast("You already have this favorite", {
-        autoClose: 1500,
-        type: "warning",
-      });
-    }
   };
 
   return (
@@ -110,7 +108,12 @@ export const ProductPage = () => {
               </h2>
               <div className="product-data-nameProduct-description">
                 <span>Description</span>
-                <p>{product.description}</p>
+                <p>
+                  {product.description}{" "}
+                  <span style={{ fontWeight: "bold" }}>
+                    Actual Stock: {product.stock}
+                  </span>
+                </p>
               </div>
 
               <label htmlFor="reseña" className="product-data-reviews-label">

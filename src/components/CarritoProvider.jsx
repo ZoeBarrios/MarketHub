@@ -13,6 +13,10 @@ export default function CarritoProvider({ children }) {
       });
 
     setCarrito([...carrito, publication]);
+    toast("Publication added to cart", {
+      autoClose: 1500,
+      type: "success",
+    });
   };
   const removeFromCarrito = (publication) => {
     setCarrito(
@@ -21,10 +25,10 @@ export default function CarritoProvider({ children }) {
   };
   const resetCarrito = () => {
     setCarrito([]);
-  }
+  };
   return (
     <CarritoContext.Provider
-      value={{ carrito, addToCarrito, removeFromCarrito,resetCarrito}}
+      value={{ carrito, addToCarrito, removeFromCarrito, resetCarrito }}
     >
       {children}
     </CarritoContext.Provider>

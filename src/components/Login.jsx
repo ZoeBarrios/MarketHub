@@ -83,6 +83,7 @@ export const Login = (props) => {
               id="email"
               name="email"
               onChange={handleInputChange}
+              autoComplete="off"
             />
             <label htmlFor="password">Password </label>
             <input

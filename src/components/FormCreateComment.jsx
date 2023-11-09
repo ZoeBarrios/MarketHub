@@ -47,12 +47,12 @@ export default function FormCreateComment({
 
   return (
     <form onSubmit={handleAddComment} className="form-create-comment">
-      <h2>Add Comment</h2>
-      <label htmlFor="text">Comment</label>
+      <h2>Add Review</h2>
+      <label htmlFor="text">Review</label>
       <textarea type="text" id="text" name="text" />
       <label htmlFor="rating">Rating</label>
       <input type="number" id="rating" max={5} name="rating" />
-      <button type="submit">Add comment</button>
+      <button type="submit">Add review</button>
     </form>
   );
 }
