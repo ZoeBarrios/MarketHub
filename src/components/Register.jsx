@@ -43,7 +43,11 @@ export const Register = (props) => {
   return (
     <div className="auth-form-container">
       <h2 className="title">Register</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form
+        className="register-form"
+        onSubmit={handleSubmit}
+        name="register-form"
+      >
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -71,7 +75,7 @@ export const Register = (props) => {
           name="email"
           onChange={handleInputChange}
         />
-        <label htmlFor="name">Phone</label>
+        <label htmlFor="phoneNumber">Phone</label>
         <input
           type="number"
           value={phoneNumber}
@@ -89,7 +93,7 @@ export const Register = (props) => {
           name="password"
           onChange={handleInputChange}
         />
-        <label htmlFor="password">Confirm Password </label>
+        <label htmlFor="confirmPassword">Confirm Password </label>
         <input
           value={confirmPassword}
           type="password"

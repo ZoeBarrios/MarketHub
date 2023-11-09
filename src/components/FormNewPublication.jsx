@@ -58,7 +58,13 @@ export default function FormNewPublication({ UserId, closeModal }) {
     <form className="form-new-publication" onSubmit={handleSubmit}>
       <h2>Create a new publication on MarketHub</h2>
       <label htmlFor="Name">Name</label>
-      <input type="text" id="Name" name="Name" onChange={handleInputChange} />
+      <input
+        type="text"
+        id="Name"
+        name="Name"
+        onChange={handleInputChange}
+        autoComplete="off"
+      />
 
       <label htmlFor="Price">Price</label>
       <input
@@ -88,17 +94,18 @@ export default function FormNewPublication({ UserId, closeModal }) {
       />
 
       <label htmlFor="Category">Category</label>
-      <select id="Category" name="Category" ref={selectOption}>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          data?.map((category) => (
+
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <select id="Category" name="Category" ref={selectOption}>
+          {data?.map((category) => (
             <option key={category.categoryId} value={category.categoryId}>
               {category.name}
             </option>
-          ))
-        )}
-      </select>
+          ))}
+        </select>
+      )}
 
       <label htmlFor="Image">Upload an image</label>
       <input type="file" id="Image" name="Image" onChange={handleInputChange} />

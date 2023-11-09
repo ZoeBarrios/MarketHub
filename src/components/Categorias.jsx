@@ -27,7 +27,7 @@ export default function Categorias() {
     });
   };
   return (
-    <div>
+    <div className="cat" >
       {loadingCategories ? (
         <Loader />
       ) : (
