@@ -20,11 +20,11 @@
   width: 80%;
   height: 80%;
   border-radius: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(154, 150, 150, 0.2);
   padding: 10px 0px;
 }
 
-.backCarrito{
+.backCarrito {
   position: absolute;
   margin-left: 2em;
   color: orangered;
@@ -235,5 +235,8 @@ input {
     display: grid;
     grid-template-columns: 1fr;
     width: 82%;
+  }
+  .backCarrito {
+    right: 90%;
   }
 }

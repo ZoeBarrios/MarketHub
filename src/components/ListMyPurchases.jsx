@@ -8,6 +8,8 @@ export default function ListMyPurchases({ id }) {
     getPurchaseByUser(Number(id))
   );
 
+  console.log(data);
+
   return (
     <ul className="list-my-purchases">
       <h2>My purchases</h2>

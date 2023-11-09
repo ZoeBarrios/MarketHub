@@ -33,7 +33,7 @@ export default function Header() {
               <>
                 <Link to="/profile">Profile</Link>
                 <i
-                  className="fa-solid fa-arrow-right-from-bracket fa-flip-both fa-lg"
+                  className="fa-solid fa-arrow-right-from-bracket fa-flip-both fa-lg logout"
                   style={{ color: "orangered" }}
                   onClick={logout}
                 ></i>

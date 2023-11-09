@@ -17,7 +17,8 @@ export default function Carrito() {
     (total, item) => total + item.price * item.stock,
     0
   );
-  const [argTax, setArgTax] = useState(total * 0.21);
+
+  const [argTax, setArgTax] = useState(parseFloat(total * 0.21).toFixed(1));
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -33,19 +34,21 @@ export default function Carrito() {
   const handleBack = () => {
     setLocation("/");
   };
-
+  console.log(total + Number(argTax));
   const handleBuy = () => {
     if (state.isAuthenticated) {
       createPurchase({
-        amount: total + argTax,
+        amount: total + Number(argTax),
         userId: state.user.id,
         sellerId: carrito[0].userId,
         publicationsIds: carrito.map((item) => item.publicationId),
-      });
-
-      toast("Purchase completed", { autoClose: 1500, type: "success" });
-      resetCarrito();
-      setLocation("/");
+      })
+        .then((res) => {
+          toast("Purchase completed", { autoClose: 1500, type: "success" });
+          resetCarrito();
+          setLocation("/");
+        })
+        .catch((err) => toast(err, { autoClose: 1500, type: "error" }));
     } else {
       toast("You must be logged in to buy", { autoClose: 1500, type: "error" });
     }
@@ -53,7 +56,10 @@ export default function Carrito() {
   return (
     <div className="cart-container">
       <div className="cart">
-        <i className="fa-solid fa-backward fa-xl backCarrito" onClick={handleBack}></i>
+        <i
+          className="fa-solid fa-backward fa-xl backCarrito"
+          onClick={handleBack}
+        ></i>
         <h1 className="titulo_carrito">
           My cart <i className="fa-solid fa-cart-shopping"></i>
         </h1>
@@ -69,9 +75,11 @@ export default function Carrito() {
         ) : (
           <>
             <div className="cart-total">
-              <p>Argentinian tax: {argTax}</p>
-              <p>Subtotal: {total}</p>
-              <p style={{ fontWeight: "bold" }}>Total: {total + argTax}</p>
+              <p>Argentinian tax: ${argTax}</p>
+              <p>Subtotal: ${total}</p>
+              <p style={{ fontWeight: "bold" }}>
+                Total: ${(total + Number(argTax)).toLocaleString()}
+              </p>
             </div>
             <div className="cart-buttons">
               <div className="input-discount">

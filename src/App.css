@@ -52,7 +52,6 @@ header img {
   width: 100%;
 }
 
-
 .btn_naranja {
   background-color: orangered;
   color: white !important;
@@ -86,7 +85,6 @@ header img {
 .cont_productos {
   position: relative;
 }
-
 
 .cont_header {
   margin: auto;
@@ -175,7 +173,7 @@ input {
   background-color: #bc787824;
 }
 
-.cont_imagen>img {
+.cont_imagen > img {
   border-radius: 1rem;
   object-fit: fill;
 }
@@ -187,7 +185,6 @@ input {
   font-weight: bold;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
-
 }
 
 .card .cont_imagen img {
@@ -349,6 +346,10 @@ footer {
   padding: 10px 15px;
   border-radius: 10px;
   background-position: center;
+}
+
+.logout {
+  cursor: pointer;
 }
 
 #oferta1 {
@@ -567,21 +568,21 @@ body {
     width: 95%;
   }
 
-  .des {}
+  .des {
+  }
 
-  .precio {}
+  .precio {
+  }
 
-  .precio a {}
+  .precio a {
+  }
 
   .precio h3 {
     /*  background-color: red;*/
   }
-
 }
 
 @media (max-width: 900px) {
-
-
   .cont_productos {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -627,7 +628,6 @@ body {
     color: orangered !important;
   }
 
-
   .cont_categorias {
     display: grid;
     grid-template-columns: 1fr;
@@ -664,7 +664,6 @@ body {
     width: 90%;
   }
 
-
   .fondo2 {
     grid-template-columns: 1fr;
     gap: 1px;
@@ -675,7 +674,6 @@ body {
   .cont_categorias {
     width: 100%;
   }
-
 }
 
 @media (max-width: 700px) {
@@ -692,7 +690,8 @@ body {
     left: 10px;
   }
 
-  .logo img {}
+  .logo img {
+  }
 
   .fondo1 {
     background-position: top;
@@ -711,14 +710,10 @@ body {
     text-align: center;
   } */
 
-
-
   .cont_footer {
     flex-direction: column;
     width: 100%;
   }
-
-
 }
 
 @media (max-width: 350px) {
@@ -730,12 +725,10 @@ body {
     line-height: 80px;
     font-size: 40px;
   }
-
-  
 }
 
-@media (min-width:1184px) and (max-width:1450px) {
-  .precio h3{
+@media (min-width: 1184px) and (max-width: 1450px) {
+  .precio h3 {
     font-size: 0.9rem;
   }
   .precio a {
@@ -749,12 +742,11 @@ body {
   }
 }
 
-
-@media (min-width:901px) and (max-width:950px){
-  .precio{
+@media (min-width: 901px) and (max-width: 950px) {
+  .precio {
     display: flex;
   }
-  .precio h3{
+  .precio h3 {
     font-size: 0.9rem;
   }
   .precio a {
@@ -768,9 +760,8 @@ body {
   }
 }
 
-
-@media (min-width:350px) and (max-width:450px) {
-  .precio h3{
+@media (min-width: 350px) and (max-width: 450px) {
+  .precio h3 {
     font-size: 0.9rem;
   }
   .precio a {
