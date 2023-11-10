@@ -13,10 +13,7 @@ export default function Carrito() {
   const [location, setLocation] = useLocation();
   const [isDiscountApplied, setIsDiscountApplied] = useState(false);
   const { state } = useContext(AuthContext);
-  var total = carrito.reduce(
-    (total, item) => total + item.price * item.stock,
-    0
-  );
+  var total = carrito.reduce((total, item) => total + item.price, 0);
 
   const [argTax, setArgTax] = useState(parseFloat(total * 0.21).toFixed(1));
 

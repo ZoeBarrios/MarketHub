@@ -12,7 +12,6 @@ export default function PublicationCart({ publication }) {
       <div className="cart-item-info">
         <h3>{publication.name}</h3>
         <p>Price: {Number(publication.price).toLocaleString()}</p>
-        <p>Quantity: {publication.stock}</p>
 
         <button onClick={() => removeFromCarrito(publication)}>
           Remove from cart
