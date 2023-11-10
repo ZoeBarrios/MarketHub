@@ -1,12 +1,15 @@
 import { checkResponse } from "../utils/responses";
 
 const { VITE_API_URL: baseUrl } = import.meta.env;
-const authorizationHeader = `Bearer ${localStorage.getItem("token")}`;
+
+const authorizationHeader = () => {
+  return `Bearer ${localStorage.getItem("token")}`;
+};
 
 export const getUsers = async () => {
   const response = await fetch(`${baseUrl}/users`, {
     headers: {
-      Authorization: authorizationHeader,
+      Authorization: authorizationHeader(),
     },
   });
   return checkResponse(response);
@@ -15,7 +18,7 @@ export const getUsers = async () => {
 export const getUser = async (id) => {
   const response = await fetch(`${baseUrl}/users/${id}`, {
     headers: {
-      Authorization: authorizationHeader,
+      Authorization: authorizationHeader(),
     },
   });
   return checkResponse(response);
@@ -25,7 +28,7 @@ export const createUser = async (user) => {
   const response = await fetch(`${baseUrl}/users`, {
     method: "POST",
     headers: {
-      Authorization: authorizationHeader,
+      Authorization: authorizationHeader(),
       "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
@@ -37,7 +40,7 @@ export const updateUser = async (id, user) => {
   const response = await fetch(`${baseUrl}/users/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: authorizationHeader,
+      Authorization: authorizationHeader(),
       "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
@@ -49,8 +52,18 @@ export const deleteUser = async (userId, IdToDelete) => {
   const response = await fetch(`${baseUrl}/users/${userId}/${IdToDelete}`, {
     method: "DELETE",
     headers: {
-      Authorization: authorizationHeader,
+      Authorization: authorizationHeader(),
     },
   });
   return checkResponse(response);
+};
+
+export const isEmailOrUsername = (emailOrUsername) => {
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+  if (emailRegex.test(emailOrUsername)) {
+    return "email";
+  } else {
+    return "userName";
+  }
 };

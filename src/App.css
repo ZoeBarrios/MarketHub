@@ -1,90 +1,776 @@
-*{
+* {
   box-sizing: border-box;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
 
-.cont_header{
- /* background-color: brown;*/
- 
-  margin: auto;
+.contenedor-carrito {
+  position: relative;
+}
+
+.carrito-numero {
+  position: absolute;
+  top: -10px;
+  left: 1em;
+  background-color: orangered;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont_header {
+  /* background-color: brown;*/
+
+  margin: -10px auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo{
+.logo {
   text-align: center;
+  cursor: pointer;
 }
 
-header{
-  background-color: #d0f5df6b;
+header {
+  /* background-color: #d0f5df6b;*/
+  background-color: orangered;
+  background-color: #f6f6f6;
+  padding: 10px 0;
 }
 
-.cont_header nav{
- /* background-color: red;*/
+header img {
+  width: 100%;
+}
+
+.btn_naranja {
+  background-color: orangered;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 5px 20px;
+  background-color: white;
+  color: black !important;
+  display: flex;
+  gap: 3px;
+}
+
+.cont_header nav {
+  /* background-color: red;*/
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 20px;
 }
 
-.logo img{
-width: 100px;
+.logo img {
+  width: 100%;
+  border-radius: 1em;
+  height: 100px;
 }
 
+.producto_no_encontrado {
+  position: absolute;
+  left: 50%;
+}
 
-input{
+.cont_productos {
+  position: relative;
+}
+
+.cont_header {
+  margin: auto;
+  width: 70%;
+}
+
+header {
+  padding: 0px;
+}
+
+input {
   padding: 5px 10px;
   border-color: black;
   border-style: solid;
   border-radius: 2em;
 }
 
-
-.cont_header a{
-  font-size: 20px;
+.cont_header a {
+  font-size: 18px;
   text-decoration: none;
   color: black;
 }
 
+.fondo1 {
+  background-image: url(https://klbtheme.com/blonwe/wp-content/uploads/2023/09/electronics1.jpg);
 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
 
+.letra_verde {
+  color: green;
+  color: darkblue;
+  color: orangered;
+}
 
+.cont_fondo1 {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 70%;
+  text-align: start;
+  font-size: 30px;
+}
 
+.cont_fondo1 p {
+  font-size: 20px;
+  color: grey;
+}
 
+.cont_fondo1 h4 {
+  line-height: 1px;
+}
 
-@media (max-width: 700px){
+.cont_fondo1 h1 {
+  line-height: 80px;
+  font-size: 50px;
+}
 
-
-  .cont_buscador{
-    display: none;
-  }
-
-  .cont_header{
-    width: 80%;
-  }
-
-.cont_header nav{
+.cont_productos {
+  /*background-color: brown;*/
+  margin: auto;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
 }
 
-
-  .logo img{
-width: 70px;
-  }
-
-  
- 
-
-
-
-
-
+.cont_imagen {
+  text-align: center;
 }
 
+.precio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.card {
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: #bc787824;
+}
+
+.cont_imagen > img {
+  border-radius: 1rem;
+  object-fit: fill;
+}
+
+.precio a {
+  color: white;
+  text-decoration: none;
+  background-color: orangered;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.card .cont_imagen img {
+  width: 80%;
+}
+
+.titulo_fondo2 {
+  /*background-color: brown;*/
+  margin: 40px auto;
+  width: 85%;
+}
+
+.car_card {
+  display: none;
+}
+
+.fondo_categorias {
+  /* background-color: orangered;*/
+}
+
+.cont_categorias {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont_categorias a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 5px;
+}
+
+.titulo_cate {
+  /* background-color: red;*/
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 10px 0;
+}
+
+.fondo_categorias {
+  background-color: #bc787824;
+  padding: 10px 0;
+  margin-bottom: 100px;
+}
+
+.cont_categorias a {
+  transition: all 0.3s;
+}
+
+.cont_categorias a:hover {
+  transition: all 0.3s;
+  color: orangered;
+}
+
+.cont_buscador {
+  position: relative;
+}
+
+.i_buscador {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  color: rgb(109, 109, 109);
+}
+
+.cont_buscador input {
+  border-color: red;
+  padding-left: 30px;
+}
+
+.menu_ham {
+  display: none;
+  cursor: pointer;
+}
+
+.eliminar {
+  display: none !important;
+}
+
+.cont_categorias {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.cont_footer {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metodos_pago {
+  display: flex;
+  gap: 20px;
+}
+
+.metodo {
+  text-align: center;
+}
+
+.metodo img {
+  width: 100%;
+}
+
+.mostrar {
+  display: flex !important;
+}
+
+.card .cont_imagen img {
+  width: 100%;
+  height: 188px;
+  /* object-fit: cover; */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/4;
+
+  align-items: center;
+  margin-top: 10px;
+}
+
+.buttons-container button {
+  border: none;
+  font-size: 3em;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cont_ofertas {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card_ofertas {
+  background-size: cover;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-position: center;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+#oferta1 {
+  background: linear-gradient(to right, #0a0c0d33, #0c101417),
+    url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/10/banner-32.jpg);
+  background-position: right;
+}
+
+#oferta2 {
+  background: linear-gradient(to right, #0a0c0d33, #0c101417),
+    url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/07/banner-33-1.jpg);
+  background-position: right;
+}
+
+#oferta3 {
+  background: linear-gradient(to right, #0a0c0d33, #0c101417),
+    url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/07/banner-34-1.jpg);
+  background-position: right;
+}
+
+.card_ofertas h3 {
+  color: rgb(0, 110, 255);
+}
+
+.card_ofertas h2 {
+  color: black;
+}
+
+.card_ofertas p {
+  color: rgb(89, 89, 89);
+  font-size: 16px;
+}
+
+.negro {
+  color: black;
+  font-weight: bold;
+}
+
+.fondo_ofertas {
+  padding: 100px 0;
+  padding-top: 50px;
+}
+
+/*ESTILOS PARA LOS SERVICIOS*/
+
+.fondo_servicios {
+  background-color: white;
+  padding: 20px 0;
+}
+
+.shop {
+  background-color: orangered;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 2em;
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cont_servicios {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card_servicio {
+  /* background-color: red;*/
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.img_serv img {
+  width: 65px;
+  border-radius: 10px;
+}
+
+body {
+  background-color: #ededed54;
+}
+
+/*ESTILOS PARA EL CONTENEDOR DE TECNOLOGIAS*/
+
+.cont_tec {
+  /* background-color: red;*/
+  margin: auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.col_tec a {
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 2em;
+  padding: 3px 20px;
+}
+
+.col_tec {
+  padding: 20px 30px;
+}
+
+#tec1 {
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/10/banner-35.jpg);
+}
+
+#tec2 {
+  background-size: cover;
+  background-position: left;
+  background-image: url(https://754969b0.rocketcdn.me/blonwe/wp-content/uploads/2023/07/banner-36-1.jpg);
+}
+
+.titulo_tec {
+  /* background-color: brown;*/
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  width: 80%;
+  color: orangered;
+}
+
+.fondo_tec {
+  margin-bottom: 200px;
+  background-color: white;
+}
+
+.fondo2 {
+  display: grid;
+  margin: auto;
+  width: 80%;
+  gap: 10px;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.cont_productos {
+  grid-template-columns: 1fr 1fr 1fr;
+  /*  background-color: red;*/
+  width: 100%;
+}
+
+.cont_categorias {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.titulo_cate {
+  margin-bottom: 40px;
+  margin-top: 100px;
+}
+
+@media (max-width: 1184px) {
+  .car_card {
+    display: initial;
+  }
+
+  .precio {
+    display: flex;
+    align-items: center;
+    display: grid;
+    /* justify-content: space-between; */
+    gap: 1px;
+  }
+
+  .cont_productos {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+  }
+
+  .fondo2 {
+    /* background-color: red;*/
+    width: 90%;
+  }
+
+  .cont_header {
+    width: 90%;
+  }
+
+  .cont_header nav {
+    gap: 20px;
+  }
+
+  .cont_buscador input {
+    width: 80%;
+  }
+
+  .cont_header nav a {
+    font-size: 17px;
+  }
+
+  .cont_categorias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cont_categorias {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cont_ofertas {
+    width: 95%;
+  }
+
+  .des {
+  }
+
+  .precio {
+  }
+
+  .precio a {
+  }
+
+  .precio h3 {
+    /*  background-color: red;*/
+  }
+}
+
+@media (max-width: 900px) {
+  .cont_productos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cont_header nav {
+    gap: 20px;
+    position: absolute;
+    background-color: white;
+    top: 100px;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+    flex-direction: column;
+  }
+
+  .i_buscador {
+    left: 34px;
+  }
+
+  .cont_header nav a {
+    font-size: 20px;
+  }
+
+  .menu_ham {
+    display: initial;
+    color: orangered !important;
+    font-size: 25px !important;
+  }
+
+  .cont_header {
+    width: 80%;
+  }
+
+  header {
+    z-index: 20;
+  }
+
+  .naranja {
+    color: orangered !important;
+  }
+
+  .cont_categorias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cont_header nav {
+    display: none;
+  }
+
+  .cont_ofertas {
+    grid-template-columns: 1fr;
+  }
+
+  .cont_servicios {
+    grid-template-columns: 1fr;
+    font-size: 20px;
+  }
+
+  #oferta1 {
+    background-repeat: no-repeat;
+  }
+
+  #oferta2 {
+    background-repeat: no-repeat;
+  }
+
+  #oferta3 {
+    background-repeat: no-repeat;
+  }
+
+  .cont_tec {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .fondo2 {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cont_categorias {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .cont_buscador {
+    display: initial;
+  }
+
+  .cont_header {
+    width: 80%;
+  }
+
+  .i_buscador {
+    top: 2px;
+    left: 10px;
+  }
+
+  .logo img {
+  }
+
+  .fondo1 {
+    background-position: top;
+  }
+
+  .cont_productos {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+  }
+
+  .precio {
+    justify-content: space-between;
+  }
+
+  /* .precio a {
+    text-align: center;
+  } */
+
+  .cont_footer {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .cont_productos {
+    grid-template-columns: 1fr;
+  }
+
+  .cont_fondo1 h1 {
+    line-height: 80px;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1184px) and (max-width: 1450px) {
+  .precio h3 {
+    font-size: 0.9rem;
+  }
+  .precio a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 950px) {
+  .precio {
+    display: flex;
+  }
+  .precio h3 {
+    font-size: 0.9rem;
+  }
+  .precio a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 450px) {
+  .precio h3 {
+    font-size: 0.9rem;
+  }
+  .precio a {
+    color: white;
+    text-decoration: none;
+    background-color: orangered;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+}
